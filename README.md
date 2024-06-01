@@ -1,4 +1,5 @@
 # Projekt: Hotelreservierungssystem
+Marc Dillinger, Umut Can Özcelik, Dewa Dörflinger und Mario Lenzin
 
 ## Überblick
 Dieses Projekt ist Teil des Kurses "Anwendungsentwicklung mit Python" und umfasst die Entwicklung eines einfachen Hotelreservierungssystems, das über die Konsole bedient wird. Ziel ist es, grundlegende Programmierkonzepte in Python zu erlernen und anzuwenden, insbesondere die Nutzung von SQLAlchemy für die Datenbankinteraktion und die Verwaltung von Objektbeziehungen.
