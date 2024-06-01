@@ -23,9 +23,3 @@ python main.py
 
 ## Verwendung
 Nach dem Start des Programms wird ein Menü angezeigt, in dem Sie zwischen verschiedenen Optionen wählen können, um Hotels zu verwalten, Zimmer zu buchen oder bestehende Buchungen anzusehen. Folgen Sie den Anweisungen auf dem Bildschirm, um die gewünschten Aktionen auszuführen.
-
-## Beitrag zum Projekt
-Da dies ein Studienprojekt ist, sind Beiträge von anderen Studierenden oder Verbesserungsvorschläge willkommen. Bitte erstellen Sie einen Pull Request oder öffnen Sie ein Issue, wenn Sie Ideen zur Verbesserung des Projekts haben.
-
-## Lizenz
-Dieses Projekt ist lizenzfrei und steht zur Bildungsnutzung frei zur Verfügung.
