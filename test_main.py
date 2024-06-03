@@ -16,4 +16,9 @@ class TestHotelFunctions(unittest.TestCase):
         hotel = Hotel(name="Test Hotel", stars=4)
         self.session.add(hotel)
         self.session.commit()
-        retrieved = self.session.query(Hotel).
+        retrieved = self.session.query(Hotel).one()
+        self.assertEqual(retrieved.name, "Test Hotel")
+        self.assertEqual(retrieved.stars, 4)
+
+if __name__ == '__main__':
+    unittest.main()
