@@ -159,5 +159,15 @@ class Booking(Base):
         ),
     )
 
+class User(Base):
+        __tablename__ = 'users'
+        id = Column(Integer, primary_key=True, index=True)
+        email = Column(String, unique=True, index=True)
+        password = Column(String)
+        bookings = relationship("Booking", back_populates="user")
+
+
+
+
     def __repr__(self) -> str:
         return f"Booking(room={self.room!r}, guest={self.guest!r}, start_date={self.start_date!r}, end_date={self.end_date!r}, comment={self.comment!r})"
