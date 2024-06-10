@@ -1,41 +1,40 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, Date
-from sqlalchemy.orm import relationship
-from database import Base
+# models.py
+from dataclasses import dataclass
+from typing import List
 
-class Room(Base):
-    __tablename__ = 'rooms'
-    id = Column(Integer, primary_key=True, index=True)
-    hotel_id = Column(Integer, ForeignKey('hotels.id'))
-    room_type = Column(String, index=True)
-    max_guests = Column(Integer)
-    description = Column(String)
-    price_per_night = Column(Float)
-    available = Column(Boolean, default=True)
-    amenities = Column(String)
-    hotel = relationship("Hotel", back_populates="rooms")
+@dataclass
+class Room:
+    room_id: int
+    hotel_id: int
+    room_type: str
+    max_guests: int
+    description: str
+    amenities: List[str]
+    price_per_night: float
+    availability: List[str]
 
-class Booking(Base):
-    __tablename__ = 'bookings'
-    id = Column(Integer, primary_key=True, index=True)
-    room_id = Column(Integer, ForeignKey('rooms.id'))
-    guest_name = Column(String)
-    guest_email = Column(String)
-    check_in = Column(Date)
-    check_out = Column(Date)
-    total_price = Column(Float)
-    room = relationship("Room")
+@dataclass
+class Hotel:
+    hotel_id: int
+    name: str
+    address: str
+    city: str
+    stars: int
+    rooms: List[Room]
 
-class User(Base):
-    __tablename__ = 'users'
-    id = Column(Integer, primary_key=True, index=True)
-    email = Column(String, unique=True, index=True)
-    password = Column(String)
-    bookings = relationship("Booking", back_populates="user")
+@dataclass
+class User:
+    user_id: int
+    email: str
+    password: str
+    booking_history: List[int]  # list of booking IDs
 
-class Hotel(Base):
-    __tablename__ = 'hotels'
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    address = Column(String)
-    stars = Column(Integer)
-    rooms = relationship("Room", back_populates="hotel")
+@dataclass
+class Booking:
+    booking_id: int
+    user_id: int
+    room_id: int
+    hotel_id: int
+    start_date: str
+    end_date: str
+    total_price: float

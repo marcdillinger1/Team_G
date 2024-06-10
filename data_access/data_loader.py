@@ -1,68 +1,38 @@
-import os
-from pathlib import Path
+# data_access/data_loader.py
+import json
+from models import Hotel, Room, User, Booking
+from typing import List
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+class DataLoader:
+    @staticmethod
+    def load_hotels(file_path: str) -> List[Hotel]:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        return [Hotel(**hotel) for hotel in data]
 
-from sqlalchemy.schema import CreateTable
+    @staticmethod
+    def load_users(file_path: str) -> List[User]:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        return [User(**user) for user in data]
 
-from data_models.models import *
+    @staticmethod
+    def load_bookings(file_path: str) -> List[Booking]:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        return [Booking(**booking) for booking in data]
 
-from data_access.data_generator import generate_hotels, generate_guests, generate_registered_guests, generate_random_bookings, \
-    generate_random_registered_bookings
+    @staticmethod
+    def save_hotels(hotels: List[Hotel], file_path: str):
+        with open(file_path, 'w') as file:
+            json.dump([hotel.__dict__ for hotel in hotels], file, indent=4)
 
+    @staticmethod
+    def save_users(users: List[User], file_path: str):
+        with open(file_path, 'w') as file:
+            json.dump([user.__dict__ for user in users], file, indent=4)
 
-def load_data_from_sqlite():
-    data_path = Path(os.getcwd()).joinpath("data")
-    data_path.mkdir(exist_ok=True)
-
-    engine = create_engine("sqlite:///data/example.data_access")
-    with open(data_path.joinpath("example.ddl"), "w") as ddl_file:
-        for table in Base.metadata.tables.values():
-            create_table = str(CreateTable(table).compile(engine)).strip()
-            ddl_file.write(f"{create_table};{os.linesep}")
-
-    Base.metadata.drop_all(engine)
-    Base.metadata.create_all(engine)
-
-    generate_hotels(engine)
-    with Session(engine) as session:
-        result = session.query(Hotel).all()
-        for hotel in result:
-            print(f"{hotel}")
-            for room in hotel.rooms:
-                print(f"{' ' * 5}{room}")
-                for amenity in room.amenities:
-                    print(f"{' ' * 10}{amenity}")
-
-    print()
-    print("#" * 20 + "Guests" + "#" * 20)
-    generate_guests(engine)
-    with Session(engine) as session:
-        result = session.query(Guest).all()
-        for guest in result:
-            print(f"{guest}")
-
-    print()
-    print("#" * 20 + "Bookings" + "#" * 20)
-    generate_random_bookings(engine)
-    with Session(engine) as session:
-        result = session.query(Booking).all()
-        for booking in result:
-            print(f"{booking}")
-
-    print()
-    print("#" * 20 + "Registered Guests" + "#" * 20)
-    generate_registered_guests(engine)
-    with Session(engine) as session:
-        result = session.query(RegisteredGuest).all()
-        for registered_guest in result:
-            print(f"{registered_guest}")
-
-    print()
-    print("#" * 20 + "Registered Bookings" + "#" * 20)
-    generate_random_registered_bookings(engine, k=5)
-    with Session(engine) as session:
-        result = session.query(Booking, RegisteredGuest).filter(Booking.guest.of_type(RegisteredGuest)).all()
-        for booking in result:
-            print(f"{booking}")
+    @staticmethod
+    def save_bookings(bookings: List[Booking], file_path: str):
+        with open(file_path, 'w') as file:
+            json.dump([booking.__dict__ for booking in bookings], file, indent=4)
