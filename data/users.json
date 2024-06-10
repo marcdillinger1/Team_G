@@ -1,0 +1,22 @@
+[
+    {"user_id": 1, "email": "user1@example.com", "password": "password1", "booking_history": [1]},
+    {"user_id": 2, "email": "user2@example.com", "password": "password2", "booking_history": [2]},
+    {"user_id": 3, "email": "user3@example.com", "password": "password3", "booking_history": [3]},
+    {"user_id": 4, "email": "user4@example.com", "password": "password4", "booking_history": [4]},
+    {"user_id": 5, "email": "user5@example.com", "password": "password5", "booking_history": [5]},
+    {"user_id": 6, "email": "user6@example.com", "password": "password6", "booking_history": [6]},
+    {"user_id": 7, "email": "user7@example.com", "password": "password7", "booking_history": [7]},
+    {"user_id": 8, "email": "user8@example.com", "password": "password8", "booking_history": [8]},
+    {"user_id": 9, "email": "user9@example.com", "password": "password9", "booking_history": [9]},
+    {"user_id": 10, "email": "user10@example.com", "password": "password10", "booking_history": [10]},
+    {"user_id": 11, "email": "user11@example.com", "password": "password11", "booking_history": [11]},
+    {"user_id": 12, "email": "user12@example.com", "password": "password12", "booking_history": [12]},
+    {"user_id": 13, "email": "user13@example.com", "password": "password13", "booking_history": [13]},
+    {"user_id": 14, "email": "user14@example.com", "password": "password14", "booking_history": [14]},
+    {"user_id": 15, "email": "user15@example.com", "password": "password15", "booking_history": [15]},
+    {"user_id": 16, "email": "user16@example.com", "password": "password16", "booking_history": [16]},
+    {"user_id": 17, "email": "user17@example.com", "password": "password17", "booking_history": [17]},
+    {"user_id": 18, "email": "user18@example.com", "password": "password18", "booking_history": [18]},
+    {"user_id": 19, "email": "user19@example.com", "password": "password19", "booking_history": [19]},
+    {"user_id": 20, "email": "user20@example.com", "password": "password20", "booking_history": [20]}
+]

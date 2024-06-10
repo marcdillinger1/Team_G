@@ -1,0 +1,182 @@
+[
+    {
+        "booking_id": 1,
+        "user_id": 1,
+        "room_id": 1,
+        "hotel_id": 1,
+        "start_date": "2024-06-15",
+        "end_date": "2024-06-16",
+        "total_price": 120.0
+    },
+    {
+        "booking_id": 2,
+        "user_id": 2,
+        "room_id": 2,
+        "hotel_id": 1,
+        "start_date": "2024-06-16",
+        "end_date": "2024-06-18",
+        "total_price": 360.0
+    },
+    {
+        "booking_id": 3,
+        "user_id": 3,
+        "room_id": 3,
+        "hotel_id": 1,
+        "start_date": "2024-06-20",
+        "end_date": "2024-06-22",
+        "total_price": 500.0
+    },
+    {
+        "booking_id": 4,
+        "user_id": 4,
+        "room_id": 4,
+        "hotel_id": 2,
+        "start_date": "2024-07-01",
+        "end_date": "2024-07-03",
+        "total_price": 200.0
+    },
+    {
+        "booking_id": 5,
+        "user_id": 5,
+        "room_id": 5,
+        "hotel_id": 2,
+        "start_date": "2024-07-04",
+        "end_date": "2024-07-05",
+        "total_price": 150.0
+    },
+    {
+        "booking_id": 6,
+        "user_id": 6,
+        "room_id": 6,
+        "hotel_id": 2,
+        "start_date": "2024-07-06",
+        "end_date": "2024-07-08",
+        "total_price": 440.0
+    },
+    {
+        "booking_id": 7,
+        "user_id": 7,
+        "room_id": 7,
+        "hotel_id": 3,
+        "start_date": "2024-08-01",
+        "end_date": "2024-08-04",
+        "total_price": 330.0
+    },
+    {
+        "booking_id": 8,
+        "user_id": 8,
+        "room_id": 8,
+        "hotel_id": 3,
+        "start_date": "2024-08-05",
+        "end_date": "2024-08-07",
+        "total_price": 320.0
+    },
+    {
+        "booking_id": 9,
+        "user_id": 9,
+        "room_id": 9,
+        "hotel_id": 3,
+        "start_date": "2024-08-08",
+        "end_date": "2024-08-12",
+        "total_price": 920.0
+    },
+    {
+        "booking_id": 10,
+        "user_id": 10,
+        "room_id": 10,
+        "hotel_id": 4,
+        "start_date": "2024-08-15",
+        "end_date": "2024-08-18",
+        "total_price": 390.0
+    },
+    {
+        "booking_id": 11,
+        "user_id": 11,
+        "room_id": 11,
+        "hotel_id": 4,
+        "start_date": "2024-08-20",
+        "end_date": "2024-08-23",
+        "total_price": 570.0
+    },
+    {
+        "booking_id": 12,
+        "user_id": 12,
+        "room_id": 12,
+        "hotel_id": 4,
+        "start_date": "2024-08-24",
+        "end_date": "2024-08-27",
+        "total_price": 780.0
+    },
+    {
+        "booking_id": 13,
+        "user_id": 13,
+        "room_id": 13,
+        "hotel_id": 5,
+        "start_date": "2024-09-01",
+        "end_date": "2024-09-02",
+        "total_price": 105.0
+    },
+    {
+        "booking_id": 14,
+        "user_id": 14,
+        "room_id": 14,
+        "hotel_id": 5,
+        "start_date": "2024-09-03",
+        "end_date": "2024-09-05",
+        "total_price": 310.0
+    },
+    {
+        "booking_id": 15,
+        "user_id": 15,
+        "room_id": 15,
+        "hotel_id": 5,
+        "start_date": "2024-09-06",
+        "end_date": "2024-09-08",
+        "total_price": 450.0
+    },
+    {
+        "booking_id": 16,
+        "user_id": 16,
+        "room_id": 16,
+        "hotel_id": 6,
+        "start_date": "2024-09-10",
+        "end_date": "2024-09-12",
+        "total_price": 230.0
+    },
+    {
+        "booking_id": 17,
+        "user_id": 17,
+        "room_id": 17,
+        "hotel_id": 6,
+        "start_date": "2024-09-13",
+        "end_date": "2024-09-15",
+        "total_price": 350.0
+    },
+    {
+        "booking_id": 18,
+        "user_id": 18,
+        "room_id": 18,
+        "hotel_id": 6,
+        "start_date": "2024-09-16",
+        "end_date": "2024-09-19",
+        "total_price": 735.0
+    },
+    {
+        "booking_id": 19,
+        "user_id": 19,
+        "room_id": 19,
+        "hotel_id": 7,
+        "start_date": "2024-09-20",
+        "end_date": "2024-09-21",
+        "total_price": 140.0
+    },
+    {
+        "booking_id": 20,
+        "user_id": 20,
+        "room_id": 20,
+        "hotel_id": 7,
+        "start_date": "2024-09-22",
+        "end_date": "2024-09-24",
+        "total_price": 400.0
+    }
+]
