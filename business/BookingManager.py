@@ -1,30 +1,55 @@
 # business/BookingManager.py
-from models import Booking
+
+from models import Booking, User, Hotel, Room
+from datetime import datetime
+from typing import List
 
 class BookingManager:
-    def __init__(self, bookings, users, hotels):
+    def __init__(self, bookings: List[Booking], users: List[User], hotels: List[Hotel]):
         self.bookings = bookings
         self.users = users
         self.hotels = hotels
 
-    # User Story 1.3: Create a new booking
-    def create_booking(self, user_id: int, room_id: int, hotel_id: int, start_date: str, end_date: str, total_price: float) -> Booking:
-        booking_id = len(self.bookings) + 1
-        new_booking = Booking(
-            booking_id=booking_id, user_id=user_id, room_id=room_id, hotel_id=hotel_id,
-            start_date=start_date, end_date=end_date, total_price=total_price
-        )
+    def create_booking(self, user_id: int, room_id: int, hotel_id: int, start_date: str, end_date: str) -> Booking:
+        booking_id = max(booking.booking_id for booking in self.bookings) + 1 if self.bookings else 1
+        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+        room = self.get_room(hotel_id, room_id)
+
+        if not self.is_room_available(room, start_date, end_date):
+            raise ValueError("Room is not available for the selected dates.")
+
+        total_price = (end_date - start_date).days * room.price_per_night
+        new_booking = Booking(booking_id, user_id, room_id, hotel_id, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"), total_price)
         self.bookings.append(new_booking)
-        user = next(user for user in self.users if user.user_id == user_id)
-        user.booking_history.append(booking_id)
         return new_booking
 
-    # User Story 2.1.1: Get user bookings for view, update, and cancel
-    def get_user_bookings(self, user_id: int):
+    def get_room(self, hotel_id: int, room_id: int) -> Room:
+        for hotel in self.hotels:
+            if hotel.hotel_id == hotel_id:
+                for room in hotel.rooms:
+                    if room.room_id == room_id:
+                        return room
+        return None
+
+    def is_room_available(self, room: Room, start_date: datetime, end_date: datetime) -> bool:
+        for booking in self.bookings:
+            if booking.room_id == room.room_id:
+                booked_start = datetime.strptime(booking.start_date, "%Y-%m-%d")
+                booked_end = datetime.strptime(booking.end_date, "%Y-%m-%d")
+                if not (end_date <= booked_start or start_date >= booked_end):
+                    return False
+        return True
+
+    def get_bookings_by_user(self, user_id: int) -> List[Booking]:
         return [booking for booking in self.bookings if booking.user_id == user_id]
 
-    def cancel_booking(self, booking_id: int):
-        booking = next(booking for booking in self.bookings if booking.booking_id == booking_id)
-        self.bookings.remove(booking)
-        user = next(user for user in self.users if user.user_id == booking.user_id)
-        user.booking_history.remove(booking_id)
+    def cancel_booking(self, booking_id: int) -> bool:
+        for booking in self.bookings:
+            if booking.booking_id == booking_id:
+                self.bookings.remove(booking)
+                return True
+        return False
+
+    def get_all_bookings(self) -> List[Booking]:
+        return self.bookings

@@ -1,586 +1,391 @@
 [
     {
         "hotel_id": 1,
-        "name": "Hotel Zurich",
-        "address": "Bahnhofstrasse 1, Zurich",
-        "city": "Zurich",
+        "name": "Hotel Bellevue",
+        "address": "1 Bellevueplatz",
+        "city": "Zürich",
         "stars": 5,
         "rooms": [
             {
                 "room_id": 1,
                 "hotel_id": 1,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
+                "description": "Ein stilvolles Einzelzimmer mit Stadtblick",
+                "amenities": ["WLAN", "TV", "Kaffeemaschine"],
                 "price_per_night": 120.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "availability": []
             },
             {
                 "room_id": 2,
                 "hotel_id": 1,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
+                "description": "Ein komfortables Doppelzimmer mit modernen Annehmlichkeiten",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
                 "price_per_night": 180.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "availability": []
             },
             {
                 "room_id": 3,
                 "hotel_id": 1,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
+                "description": "Ein geräumiges Familienzimmer mit zusätzlichen Betten",
+                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
                 "price_per_night": 250.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 2,
-        "name": "Hotel Geneva",
-        "address": "Rue du Rh\u00f4ne 50, Geneva",
-        "city": "Geneva",
+        "name": "Alpen Lodge",
+        "address": "99 Bergweg",
+        "city": "Interlaken",
         "stars": 4,
         "rooms": [
             {
                 "room_id": 4,
                 "hotel_id": 2,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 100.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein gemütliches Einzelzimmer mit Bergblick",
+                "amenities": ["WLAN", "TV", "Frühstück inklusive"],
+                "price_per_night": 110.0,
+                "availability": []
             },
             {
                 "room_id": 5,
                 "hotel_id": 2,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 150.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein charmantes Doppelzimmer mit Balkon",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "price_per_night": 170.0,
+                "availability": []
             },
             {
                 "room_id": 6,
                 "hotel_id": 2,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
+                "description": "Ein Familienzimmer mit zusätzlichem Platz",
+                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
                 "price_per_night": 220.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 3,
-        "name": "Hotel Lausanne",
-        "address": "Avenue d'Ouchy 40, Lausanne",
-        "city": "Lausanne",
-        "stars": 4,
+        "name": "Seeblick Resort",
+        "address": "10 Uferstraße",
+        "city": "Genf",
+        "stars": 5,
         "rooms": [
             {
                 "room_id": 7,
                 "hotel_id": 3,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 110.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein ruhiges Einzelzimmer mit Seeblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Kaffeemaschine"],
+                "price_per_night": 130.0,
+                "availability": []
             },
             {
                 "room_id": 8,
                 "hotel_id": 3,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 160.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein luxuriöses Doppelzimmer mit Balkon",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "price_per_night": 200.0,
+                "availability": []
             },
             {
                 "room_id": 9,
                 "hotel_id": 3,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 230.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Eine Familiensuite mit Seeblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Kochnische"],
+                "price_per_night": 280.0,
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 4,
-        "name": "Hotel Basel",
-        "address": "Messeplatz 12, Basel",
-        "city": "Basel",
-        "stars": 5,
+        "name": "Historisches Gasthaus",
+        "address": "45 Altstadtweg",
+        "city": "Bern",
+        "stars": 4,
         "rooms": [
             {
                 "room_id": 10,
                 "hotel_id": 4,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 130.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Einzelzimmer in historischem Ambiente",
+                "amenities": ["WLAN", "TV", "Minibar"],
+                "price_per_night": 100.0,
+                "availability": []
             },
             {
                 "room_id": 11,
                 "hotel_id": 4,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 190.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Doppelzimmer mit antiken Möbeln",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "price_per_night": 150.0,
+                "availability": []
             },
             {
                 "room_id": 12,
                 "hotel_id": 4,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 260.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Familienzimmer mit historischem Charme",
+                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
+                "price_per_night": 220.0,
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 5,
-        "name": "Hotel Bern",
-        "address": "Waisenhausplatz 14, Bern",
-        "city": "Bern",
-        "stars": 4,
+        "name": "Stadthotel Zentral",
+        "address": "22 Zentralplatz",
+        "city": "Basel",
+        "stars": 3,
         "rooms": [
             {
                 "room_id": 13,
                 "hotel_id": 5,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 105.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein praktisches Einzelzimmer im Stadtzentrum",
+                "amenities": ["WLAN", "TV", "Minibar"],
+                "price_per_night": 90.0,
+                "availability": []
             },
             {
                 "room_id": 14,
                 "hotel_id": 5,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 155.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein modernes Doppelzimmer im Stadtzentrum",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "price_per_night": 140.0,
+                "availability": []
             },
             {
                 "room_id": 15,
                 "hotel_id": 5,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 225.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Familienzimmer im Herzen der Stadt",
+                "amenities": ["WLAN", "TV", "Minibar", "Kochnische"],
+                "price_per_night": 200.0,
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 6,
-        "name": "Hotel Lucerne",
-        "address": "Pilatusstrasse 29, Lucerne",
-        "city": "Lucerne",
-        "stars": 5,
+        "name": "Strandhotel",
+        "address": "8 Strandallee",
+        "city": "Lugano",
+        "stars": 4,
         "rooms": [
             {
                 "room_id": 16,
                 "hotel_id": 6,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
+                "description": "Ein Einzelzimmer mit Meerblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
                 "price_per_night": 115.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "availability": []
             },
             {
                 "room_id": 17,
                 "hotel_id": 6,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 175.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Doppelzimmer mit Meerblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "price_per_night": 170.0,
+                "availability": []
             },
             {
                 "room_id": 18,
                 "hotel_id": 6,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 245.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Familienzimmer mit Meerblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
+                "price_per_night": 230.0,
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 7,
-        "name": "Hotel St. Moritz",
-        "address": "Via Serlas 23, St. Moritz",
-        "city": "St. Moritz",
+        "name": "Berg Rückzugsort",
+        "address": "14 Gipfelweg",
+        "city": "Zermatt",
         "stars": 5,
         "rooms": [
             {
                 "room_id": 19,
                 "hotel_id": 7,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 140.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Einzelzimmer mit Bergblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Kaffeemaschine"],
+                "price_per_night": 130.0,
+                "availability": []
             },
             {
                 "room_id": 20,
                 "hotel_id": 7,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 200.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Doppelzimmer mit Bergblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "price_per_night": 190.0,
+                "availability": []
             },
             {
                 "room_id": 21,
                 "hotel_id": 7,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 280.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Eine Familiensuite mit Bergblick",
+                "amenities": ["WLAN", "TV", "Minibar", "Whirlpool"],
+                "price_per_night": 270.0,
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 8,
-        "name": "Hotel Interlaken",
-        "address": "H\u00f6heweg 74, Interlaken",
-        "city": "Interlaken",
-        "stars": 4,
+        "name": "Stadt Komfort Hotel",
+        "address": "12 Urbanstraße",
+        "city": "Lausanne",
+        "stars": 3,
         "rooms": [
             {
                 "room_id": 22,
                 "hotel_id": 8,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 110.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein komfortables Einzelzimmer in der Stadt",
+                "amenities": ["WLAN", "TV", "Minibar"],
+                "price_per_night": 100.0,
+                "availability": []
             },
             {
                 "room_id": 23,
                 "hotel_id": 8,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 160.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein komfortables Doppelzimmer in der Stadt",
+                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "price_per_night": 150.0,
+                "availability": []
             },
             {
                 "room_id": 24,
                 "hotel_id": 8,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 230.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein geräumiges Familienzimmer in der Stadt",
+                "amenities": ["WLAN", "TV", "Minibar", "Kochnische"],
+                "price_per_night": 210.0,
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 9,
-        "name": "Hotel Lugano",
-        "address": "Via Nassa 52, Lugano",
-        "city": "Lugano",
+        "name": "Chalet Hotel",
+        "address": "56 Alpenstraße",
+        "city": "Grindelwald",
         "stars": 4,
         "rooms": [
             {
                 "room_id": 25,
                 "hotel_id": 9,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
+                "description": "Ein Einzelzimmer in einem gemütlichen Chalet",
+                "amenities": ["WLAN", "TV", "Kamin"],
                 "price_per_night": 120.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "availability": []
             },
             {
                 "room_id": 26,
                 "hotel_id": 9,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
-                "price_per_night": 170.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Doppelzimmer mit alpinem Charme",
+                "amenities": ["WLAN", "TV", "Kamin", "Balkon"],
+                "price_per_night": 180.0,
+                "availability": []
             },
             {
                 "room_id": 27,
                 "hotel_id": 9,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV"
-                ],
+                "description": "Ein Familienzimmer in einem gemütlichen Chalet",
+                "amenities": ["WLAN", "TV", "Kamin", "Spielbereich"],
                 "price_per_night": 240.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "availability": []
             }
         ]
     },
     {
         "hotel_id": 10,
-        "name": "Hotel Zermatt",
-        "address": "Bahnhofstrasse 5, Zermatt",
-        "city": "Zermatt",
+        "name": "Öko-Freundliches Hotel",
+        "address": "78 Grünweg",
+        "city": "St. Moritz",
         "stars": 5,
         "rooms": [
             {
                 "room_id": 28,
                 "hotel_id": 10,
-                "room_type": "Single",
+                "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "A cozy single room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 135.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Einzelzimmer in einem öko-freundlichen Hotel",
+                "amenities": ["WLAN", "TV", "Solarstrom"],
+                "price_per_night": 125.0,
+                "availability": []
             },
             {
                 "room_id": 29,
                 "hotel_id": 10,
-                "room_type": "Double",
+                "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "A spacious double room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 195.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Doppelzimmer mit öko-freundlichen Funktionen",
+                "amenities": ["WLAN", "TV", "Solarstrom", "Balkon"],
+                "price_per_night": 180.0,
+                "availability": []
             },
             {
                 "room_id": 30,
                 "hotel_id": 10,
-                "room_type": "Family",
+                "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "A large family room.",
-                "amenities": [
-                    "Wi-Fi",
-                    "TV",
-                    "Minibar"
-                ],
-                "price_per_night": 265.0,
-                "availability": [
-                    "2024-06-15",
-                    "2024-06-16"
-                ]
+                "description": "Ein Familienzimmer mit öko-freundlichen Annehmlichkeiten",
+                "amenities": ["WLAN", "TV", "Solarstrom", "Spielbereich"],
+                "price_per_night": 250.0,
+                "availability": []
             }
         ]
     }

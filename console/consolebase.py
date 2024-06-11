@@ -1,9 +1,10 @@
 # console/consolebase.py
-from business.base_manager import BaseManager
-from business.search_manager import SearchManager
-from business.user_manager import UserManager
-from business.booking_manager import BookingManager
-from business.admin_manager import AdminManager
+
+from business.BaseManager import BaseManager
+from business.SearchManager import SearchManager
+from business.UserManager import UserManager
+from business.BookingManager import BookingManager
+from business.AdminManager import AdminManager
 from datetime import datetime
 
 class ConsoleApp:
@@ -25,7 +26,7 @@ class ConsoleApp:
                 print("3. Make a Booking")
                 print("4. Cancel a Booking")
                 print("5. Logout")
-                if self.current_user.email == 'admin@hotel.com':  # Example admin check
+                if self.user_manager.is_admin(self.current_user.email, self.current_user.password):
                     print("6. Admin Menu")
                 choice = input("Choose an option: ")
                 if choice == '1':
@@ -38,7 +39,7 @@ class ConsoleApp:
                     self.cancel_booking()
                 elif choice == '5':
                     self.current_user = None
-                elif choice == '6' and self.current_user.email == 'admin@hotel.com':
+                elif choice == '6' and self.user_manager.is_admin(self.current_user.email, self.current_user.password):
                     self.admin_menu()
                 else:
                     print("Invalid choice!")
@@ -52,179 +53,116 @@ class ConsoleApp:
                 elif choice == '2':
                     self.login()
                 elif choice == '3':
-                    self.search_hotels_as_guest()
+                    self.search_hotels_guest()
                 else:
                     print("Invalid choice!")
 
     def register(self):
         email = input("Email: ")
         password = input("Password: ")
-        try:
-            self.current_user = self.user_manager.register_user(email, password)
-            self.base_manager.save_all()
-            print("Registration successful!")
-        except ValueError as e:
-            print(f"Error: {e}")
+        user = self.user_manager.register_user(email, password)
+        self.base_manager.save_all()
+        print(f"Registered successfully! User ID: {user.user_id}")
 
     def login(self):
         email = input("Email: ")
         password = input("Password: ")
-        try:
-            self.current_user = self.user_manager.login_user(email, password)
-            print("Login successful!")
-        except ValueError as e:
-            print(f"Error: {e}")
+        user = self.user_manager.login_user(email, password)
+        if user:
+            self.current_user = user
+            print("Logged in successfully!")
+        else:
+            print("Invalid email or password!")
 
-    def search_hotels_as_guest(self):
-        while True:
-            print("\nSearch Options")
-            print("1. Search by City")
-            print("2. Search by City and Stars")
-            print("3. Search by City and Guests")
-            print("4. Search by City, Guests, and Availability")
-            print("5. Back to Main Menu")
-            choice = input("Choose an option: ")
-            if choice == '1':
-                self.search_by_city()
-            elif choice == '2':
-                self.search_by_city_and_stars()
-            elif choice == '3':
-                self.search_by_city_and_guests()
-            elif choice == '4':
-                self.search_by_city_guests_and_availability()
-            elif choice == '5':
-                break
-            else:
-                print("Invalid choice!")
+    def search_hotels_guest(self):
+        print("Search Hotels:")
+        print("1. By City")
+        print("2. By City and Stars")
+        print("3. By City and Guests")
+        print("4. By City, Guests, and Dates")
+        choice = input("Choose an option: ")
+        if choice == '1':
+            self.search_by_city()
+        elif choice == '2':
+            self.search_by_city_and_stars()
+        elif choice == '3':
+            self.search_by_city_and_guests()
+        elif choice == '4':
+            self.search_by_city_dates_and_guests()
+        else:
+            print("Invalid choice!")
 
     def search_by_city(self):
-        city = input("Enter city: ")
+        city = input("City: ")
         hotels = self.search_manager.search_by_city(city)
-        if hotels:
-            print(f"Hotels in {city}:")
-            for hotel in hotels:
-                print(f"{hotel.name} - {hotel.address} - {hotel.stars} stars")
-                self.view_hotel_details(hotel.hotel_id)
-        else:
-            print("No hotels found.")
+        self.display_hotels(hotels)
 
     def search_by_city_and_stars(self):
-        city = input("Enter city: ")
-        stars = int(input("Enter number of stars: "))
-        hotels = self.search_manager.search_by_stars(city, stars)
-        if hotels:
-            print(f"Hotels in {city} with {stars} stars:")
-            for hotel in hotels:
-                print(f"{hotel.name} - {hotel.address} - {hotel.stars} stars")
-                self.view_hotel_details(hotel.hotel_id)
-        else:
-            print("No hotels found.")
+        city = input("City: ")
+        stars = int(input("Stars: "))
+        hotels = self.search_manager.search_by_city_and_stars(city, stars)
+        self.display_hotels(hotels)
 
     def search_by_city_and_guests(self):
-        city = input("Enter city: ")
-        guests = int(input("Enter number of guests: "))
-        hotels = self.search_manager.search_by_guests(city, guests)
+        city = input("City: ")
+        guests = int(input("Number of guests: "))
+        hotels = self.search_manager.search_by_city_and_guests(city, guests)
+        self.display_hotels(hotels)
+
+    def search_by_city_dates_and_guests(self):
+        city = input("City: ")
+        guests = int(input("Number of guests: "))
+        start_date = input("Start date (YYYY-MM-DD): ")
+        end_date = input("End date (YYYY-MM-DD): ")
+        stars = input("Stars (leave blank for any): ")
+        stars = int(stars) if stars else None
+
+        hotels = self.search_manager.search_by_city_dates_and_guests(city, guests, start_date, end_date, stars)
+        self.display_hotels(hotels)
+
+    def display_hotels(self, hotels):
         if hotels:
-            print(f"Hotels in {city} with rooms for {guests} guests:")
             for hotel in hotels:
-                print(f"{hotel.name} - {hotel.address} - {hotel.stars} stars")
-                self.view_hotel_details(hotel.hotel_id)
+                print(f"Hotel ID: {hotel.hotel_id}, Name: {hotel.name}, Address: {hotel.address}, Stars: {hotel.stars}")
+                for room in hotel.rooms:
+                    print(f"  Room ID: {room.room_id}, Type: {room.room_type}, Max Guests: {room.max_guests}, Price: {room.price_per_night}")
         else:
             print("No hotels found.")
-
-    def search_by_city_guests_and_availability(self):
-        city = input("Enter city: ")
-        guests = int(input("Enter number of guests: "))
-        start_date = input("Enter start date (YYYY-MM-DD): ")
-        end_date = input("Enter end date (YYYY-MM-DD): ")
-        hotels = self.search_manager.search_by_availability(city, guests, start_date, end_date)
-        if hotels:
-            print(f"Hotels in {city} with rooms for {guests} guests from {start_date} to {end_date}:")
-            for hotel in hotels:
-                print(f"{hotel.name} - {hotel.address} - {hotel.stars} stars")
-                self.view_hotel_details(hotel.hotel_id)
-        else:
-            print("No hotels found.")
-
-    def view_hotel_details(self, hotel_id):
-        hotel = next((hotel for hotel in self.base_manager.hotels if hotel.hotel_id == hotel_id), None)
-        if hotel:
-            print(f"Hotel Name: {hotel.name}")
-            print(f"Address: {hotel.address}")
-            print(f"Stars: {hotel.stars}")
-            print("Rooms:")
-            for room in hotel.rooms:
-                if isinstance(room, dict):
-                    print(f"Room ID: {room['room_id']}, Type: {room['room_type']}, Max Guests: {room['max_guests']}, Description: {room['description']}, Price per Night: {room['price_per_night']}, Amenities: {', '.join(room['amenities'])}")
-                else:
-                    print(f"Room ID: {room.room_id}, Type: {room.room_type}, Max Guests: {room.max_guests}, Description: {room.description}, Price per Night: {room.price_per_night}, Amenities: {', '.join(room.amenities)}")
-        else:
-            print("Hotel not found.")
-
-    def make_booking(self):
-        city = input("Enter city: ")
-        hotels = self.search_manager.search_by_city(city)
-        if not hotels:
-            print("No hotels found.")
-            return
-
-        print("Available hotels:")
-        for hotel in hotels:
-            print(f"{hotel.hotel_id}. {hotel.name} - {hotel.address} - {hotel.stars} stars")
-
-        hotel_id = int(input("Enter hotel ID to book: "))
-        hotel = next((hotel for hotel in hotels if hotel.hotel_id == hotel_id), None)
-        if not hotel:
-            print("Invalid hotel ID.")
-            return
-
-        print("Available rooms:")
-        for room in hotel.rooms:
-            if isinstance(room, dict):
-                print(f"Room ID: {room['room_id']}, Type: {room['room_type']}, Price per night: {room['price_per_night']}, Max guests: {room['max_guests']}")
-            else:
-                print(f"Room ID: {room.room_id}, Type: {room.room_type}, Price per night: {room.price_per_night}, Max guests: {room.max_guests}")
-
-        room_id = int(input("Enter room ID to book: "))
-        room = next((room for room in hotel.rooms if room['room_id'] == room_id), None)
-        if not room:
-            print("Invalid room ID.")
-            return
-
-        start_date = input("Enter start date (YYYY-MM-DD): ")
-        end_date = input("Enter end date (YYYY-MM-DD): ")
-
-        total_price = room['price_per_night'] * (datetime.strptime(end_date, "%Y-%m-%d") - datetime.strptime(start_date, "%Y-%m-%d")).days
-        booking = self.booking_manager.create_booking(self.current_user.user_id, room_id, hotel_id, start_date, end_date, total_price)
-        self.base_manager.save_all()
-        print(f"Booking successful! Booking ID: {booking.booking_id}")
-
-    def cancel_booking(self):
-        booking_id = int(input("Enter booking ID to cancel: "))
-        try:
-            self.booking_manager.cancel_booking(booking_id)
-            self.base_manager.save_all()
-            print("Booking cancelled successfully!")
-        except ValueError as e:
-            print(f"Error: {e}")
 
     def view_booking_history(self):
-        bookings = self.booking_manager.get_user_bookings(self.current_user.user_id)
+        bookings = self.booking_manager.get_bookings_by_user(self.current_user.user_id)
         if bookings:
-            print("Your bookings:")
             for booking in bookings:
-                print(f"Booking ID: {booking.booking_id}, Hotel ID: {booking.hotel_id}, Room ID: {booking.room_id}, Dates: {booking.start_date} to {booking.end_date}")
+                print(f"Booking ID: {booking.booking_id}, Hotel ID: {booking.hotel_id}, Room ID: {booking.room_id}, Dates: {booking.start_date} to {booking.end_date}, Total Price: {booking.total_price}")
         else:
             print("No bookings found.")
 
+    def make_booking(self):
+        hotel_id = int(input("Hotel ID: "))
+        room_id = int(input("Room ID: "))
+        start_date = input("Start date (YYYY-MM-DD): ")
+        end_date = input("End date (YYYY-MM-DD): ")
+        try:
+            booking = self.booking_manager.create_booking(self.current_user.user_id, room_id, hotel_id, start_date, end_date)
+            self.base_manager.save_all()
+            print(f"Booking created successfully! Booking ID: {booking.booking_id}")
+        except ValueError as e:
+            print(f"Error: {e}. Please use the format YYYY-MM-DD for dates.")
+
+    def cancel_booking(self):
+        booking_id = int(input("Booking ID: "))
+        if self.booking_manager.cancel_booking(booking_id):
+            self.base_manager.save_all()
+            print("Booking canceled successfully!")
+        else:
+            print("Booking not found!")
+
     def admin_menu(self):
-        print("Admin Menu")
+        print("Admin Menu:")
         print("1. Add Hotel")
         print("2. Remove Hotel")
         print("3. Update Hotel")
-        print("4. Add Room")
-        print("5. Remove Room")
-        print("6. View All Bookings")
+        print("4. View All Bookings")
         choice = input("Choose an option: ")
         if choice == '1':
             self.add_hotel()
@@ -233,19 +171,15 @@ class ConsoleApp:
         elif choice == '3':
             self.update_hotel()
         elif choice == '4':
-            self.add_room()
-        elif choice == '5':
-            self.remove_room()
-        elif choice == '6':
             self.view_all_bookings()
         else:
             print("Invalid choice!")
 
     def add_hotel(self):
         name = input("Hotel name: ")
-        address = input("Address: ")
-        city = input("City: ")
-        stars = int(input("Stars: "))
+        address = input("Hotel address: ")
+        city = input("Hotel city: ")
+        stars = int(input("Hotel stars: "))
         self.admin_manager.add_hotel(name, address, city, stars)
         self.base_manager.save_all()
         print("Hotel added successfully!")
@@ -266,24 +200,6 @@ class ConsoleApp:
         self.admin_manager.update_hotel(hotel_id, name, address, city, stars)
         self.base_manager.save_all()
         print("Hotel updated successfully!")
-
-    def add_room(self):
-        hotel_id = int(input("Hotel ID: "))
-        room_type = input("Room type: ")
-        max_guests = int(input("Max guests: "))
-        description = input("Description: ")
-        amenities = input("Amenities (comma separated): ").split(',')
-        price_per_night = float(input("Price per night: "))
-        self.admin_manager.add_room_to_hotel(hotel_id, room_type, max_guests, description, amenities, price_per_night)
-        self.base_manager.save_all()
-        print("Room added successfully!")
-
-    def remove_room(self):
-        hotel_id = int(input("Hotel ID: "))
-        room_id = int(input("Room ID to remove: "))
-        self.admin_manager.remove_room_from_hotel(hotel_id, room_id)
-        self.base_manager.save_all()
-        print("Room removed successfully!")
 
     def view_all_bookings(self):
         bookings = self.booking_manager.get_all_bookings()

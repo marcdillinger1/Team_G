@@ -25,7 +25,7 @@ class DataLoader:
     @staticmethod
     def save_hotels(hotels: List[Hotel], file_path: str):
         with open(file_path, 'w') as file:
-            json.dump([hotel.__dict__ for hotel in hotels], file, indent=4)
+            json.dump([hotel.to_dict() for hotel in hotels], file, indent=4)
 
     @staticmethod
     def save_users(users: List[User], file_path: str):
