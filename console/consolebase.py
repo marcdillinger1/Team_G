@@ -24,10 +24,11 @@ class ConsoleApp:
                 print("1. Search Hotels")
                 print("2. View Booking History")
                 print("3. Make a Booking")
-                print("4. Cancel a Booking")
-                print("5. Logout")
+                print("4. Update a Booking")
+                print("5. Cancel a Booking")
+                print("6. Logout")
                 if self.user_manager.is_admin(self.current_user.email, self.current_user.password):
-                    print("6. Admin Menu")
+                    print("7. Admin Menu")
                 choice = input("Choose an option: ")
                 if choice == '1':
                     self.search_hotels()
@@ -36,10 +37,12 @@ class ConsoleApp:
                 elif choice == '3':
                     self.make_booking()
                 elif choice == '4':
-                    self.cancel_booking()
+                    self.update_booking()
                 elif choice == '5':
+                    self.cancel_booking()
+                elif choice == '6':
                     self.current_user = None
-                elif choice == '6' and self.user_manager.is_admin(self.current_user.email, self.current_user.password):
+                elif choice == '7' and self.user_manager.is_admin(self.current_user.email, self.current_user.password):
                     self.admin_menu()
                 else:
                     print("Invalid choice!")
@@ -145,6 +148,14 @@ class ConsoleApp:
         else:
             print("No available rooms for the selected dates.")
 
+    def view_booking_history(self):
+        bookings = self.booking_manager.get_bookings_by_user(self.current_user.user_id)
+        if bookings:
+            for booking in bookings:
+                print(f"Booking ID: {booking.booking_id}, Hotel ID: {booking.hotel_id}, Room ID: {booking.room_id}, Dates: {booking.start_date} to {booking.end_date}, Total Price: {booking.total_price}")
+        else:
+            print("No bookings found.")
+
     def make_booking(self):
         hotel_id = int(input("Hotel ID: "))
         room_id = int(input("Room ID: "))
@@ -169,6 +180,16 @@ class ConsoleApp:
             print(f"Booking created successfully! Booking ID: {booking.booking_id}")
         except ValueError as e:
             print(f"Error: {e}. Please use the format YYYY-MM-DD for dates.")
+
+    def update_booking(self):
+        booking_id = int(input("Booking ID: "))
+        start_date = input("New start date (YYYY-MM-DD, leave blank to skip): ")
+        end_date = input("New end date (YYYY-MM-DD, leave blank to skip): ")
+        if self.booking_manager.update_booking(booking_id, start_date if start_date else None, end_date if end_date else None):
+            self.base_manager.save_all()
+            print("Booking updated successfully!")
+        else:
+            print("Booking not found!")
 
     def cancel_booking(self):
         booking_id = int(input("Booking ID: "))

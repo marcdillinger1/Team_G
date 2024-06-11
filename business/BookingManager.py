@@ -49,19 +49,35 @@ class BookingManager:
             "hotel_id": booking.hotel_id,
             "hotel_name": hotel.name,
             "hotel_address": hotel.address,
-            "hotel_city": hotel.city,  # Hinzufügen der Stadt/Ort des Hotels
+            "hotel_city": hotel.city,
             "room_type": room.room_type,
             "room_description": room.description,
             "room_amenities": room.amenities,
             "max_guests": room.max_guests,
-            "price_per_night": room.price_per_night,  # Hinzufügen des Preises pro Nacht
+            "price_per_night": room.price_per_night,
             "start_date": booking.start_date,
             "end_date": booking.end_date,
             "total_price": booking.total_price
         }
 
         with open(f"booking_{booking.booking_id}.json", 'w') as file:
-            json.dump(booking_details, file, indent=4)
+            json.dump(booking_details, file, indent=4, default=str)
+
+    def update_booking(self, booking_id: int, start_date: str = None, end_date: str = None) -> bool:
+        booking = next((b for b in self.bookings if b.booking_id == booking_id), None)
+        if not booking:
+            return False
+
+        if start_date:
+            booking.start_date = start_date
+        if end_date:
+            booking.end_date = end_date
+
+        booking.start_date_dt = datetime.strptime(booking.start_date, "%Y-%m-%d")
+        booking.end_date_dt = datetime.strptime(booking.end_date, "%Y-%m-%d")
+        booking.total_price = self.calculate_total_price(booking.room_id, booking.start_date_dt, booking.end_date_dt)
+        self.save_booking_to_file(booking)
+        return True
 
     def get_bookings_by_user(self, user_id: int) -> List[Booking]:
         return [booking for booking in self.bookings if booking.user_id == user_id]
