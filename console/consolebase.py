@@ -10,7 +10,7 @@ from datetime import datetime
 class ConsoleApp:
     def __init__(self):
         self.base_manager = BaseManager()
-        self.search_manager = SearchManager(self.base_manager.hotels)
+        self.search_manager = SearchManager(self.base_manager.hotels, self.base_manager.bookings)
         self.user_manager = UserManager(self.base_manager.users)
         self.booking_manager = BookingManager(self.base_manager.bookings, self.base_manager.users, self.base_manager.hotels)
         self.admin_manager = AdminManager(self.base_manager.hotels)
@@ -47,6 +47,7 @@ class ConsoleApp:
                 print("1. Register")
                 print("2. Login")
                 print("3. Search Hotels as Guest")
+                print("4. Make a Booking as Guest")
                 choice = input("Choose an option: ")
                 if choice == '1':
                     self.register()
@@ -54,6 +55,8 @@ class ConsoleApp:
                     self.login()
                 elif choice == '3':
                     self.search_hotels_guest()
+                elif choice == '4':
+                    self.make_booking_guest()
                 else:
                     print("Invalid choice!")
 
@@ -118,24 +121,29 @@ class ConsoleApp:
         stars = int(stars) if stars else None
 
         hotels = self.search_manager.search_by_city_dates_and_guests(city, guests, start_date, end_date, stars)
-        self.display_hotels(hotels)
+        self.display_hotels(hotels, guests, start_date, end_date)
 
-    def display_hotels(self, hotels):
+    def display_hotels(self, hotels, guests=None, start_date=None, end_date=None):
         if hotels:
             for hotel in hotels:
                 print(f"Hotel ID: {hotel.hotel_id}, Name: {hotel.name}, Address: {hotel.address}, Stars: {hotel.stars}")
-                for room in hotel.rooms:
-                    print(f"  Room ID: {room.room_id}, Type: {room.room_type}, Max Guests: {room.max_guests}, Price: {room.price_per_night}")
+                if guests and start_date and end_date:
+                    self.view_hotel_details(hotel.hotel_id, guests, start_date, end_date)
+                else:
+                    for room in hotel.rooms:
+                        print(f"  Room ID: {room.room_id}, Type: {room.room_type}, Max Guests: {room.max_guests}, Price: {room.price_per_night}")
         else:
             print("No hotels found.")
 
-    def view_booking_history(self):
-        bookings = self.booking_manager.get_bookings_by_user(self.current_user.user_id)
-        if bookings:
-            for booking in bookings:
-                print(f"Booking ID: {booking.booking_id}, Hotel ID: {booking.hotel_id}, Room ID: {booking.room_id}, Dates: {booking.start_date} to {booking.end_date}, Total Price: {booking.total_price}")
+    def view_hotel_details(self, hotel_id: int, guests: int, start_date: str, end_date: str):
+        available_rooms = self.search_manager.get_available_rooms(hotel_id, guests, start_date, end_date)
+        if available_rooms:
+            print("Available Rooms:")
+            for room in available_rooms:
+                total_price = room.price_per_night * (datetime.strptime(end_date, "%Y-%m-%d") - datetime.strptime(start_date, "%Y-%m-%d")).days
+                print(f"Room ID: {room.room_id}, Type: {room.room_type}, Max Guests: {room.max_guests}, Description: {room.description}, Amenities: {', '.join(room.amenities)}, Price per Night: {room.price_per_night}, Total Price: {total_price}")
         else:
-            print("No bookings found.")
+            print("No available rooms for the selected dates.")
 
     def make_booking(self):
         hotel_id = int(input("Hotel ID: "))
@@ -144,6 +152,19 @@ class ConsoleApp:
         end_date = input("End date (YYYY-MM-DD): ")
         try:
             booking = self.booking_manager.create_booking(self.current_user.user_id, room_id, hotel_id, start_date, end_date)
+            self.base_manager.save_all()
+            print(f"Booking created successfully! Booking ID: {booking.booking_id}")
+        except ValueError as e:
+            print(f"Error: {e}. Please use the format YYYY-MM-DD for dates.")
+
+    def make_booking_guest(self):
+        hotel_id = int(input("Hotel ID: "))
+        room_id = int(input("Room ID: "))
+        start_date = input("Start date (YYYY-MM-DD): ")
+        end_date = input("End date (YYYY-MM-DD): ")
+        try:
+            # For guest users, we can use a temporary user ID, e.g., -1
+            booking = self.booking_manager.create_booking(-1, room_id, hotel_id, start_date, end_date)
             self.base_manager.save_all()
             print(f"Booking created successfully! Booking ID: {booking.booking_id}")
         except ValueError as e:

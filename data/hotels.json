@@ -3,7 +3,7 @@
         "hotel_id": 1,
         "name": "Hotel Bellevue",
         "address": "1 Bellevueplatz",
-        "city": "Zürich",
+        "city": "Z\u00fcrich",
         "stars": 5,
         "rooms": [
             {
@@ -12,7 +12,11 @@
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
                 "description": "Ein stilvolles Einzelzimmer mit Stadtblick",
-                "amenities": ["WLAN", "TV", "Kaffeemaschine"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Kaffeemaschine"
+                ],
                 "price_per_night": 120.0,
                 "availability": []
             },
@@ -22,7 +26,12 @@
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
                 "description": "Ein komfortables Doppelzimmer mit modernen Annehmlichkeiten",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 180.0,
                 "availability": []
             },
@@ -31,8 +40,13 @@
                 "hotel_id": 1,
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "Ein geräumiges Familienzimmer mit zusätzlichen Betten",
-                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
+                "description": "Ein ger\u00e4umiges Familienzimmer mit zus\u00e4tzlichen Betten",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Spielbereich"
+                ],
                 "price_per_night": 250.0,
                 "availability": []
             }
@@ -50,8 +64,12 @@
                 "hotel_id": 2,
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "Ein gemütliches Einzelzimmer mit Bergblick",
-                "amenities": ["WLAN", "TV", "Frühstück inklusive"],
+                "description": "Ein gem\u00fctliches Einzelzimmer mit Bergblick",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Fr\u00fchst\u00fcck inklusive"
+                ],
                 "price_per_night": 110.0,
                 "availability": []
             },
@@ -61,7 +79,12 @@
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
                 "description": "Ein charmantes Doppelzimmer mit Balkon",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 170.0,
                 "availability": []
             },
@@ -70,8 +93,13 @@
                 "hotel_id": 2,
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "Ein Familienzimmer mit zusätzlichem Platz",
-                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
+                "description": "Ein Familienzimmer mit zus\u00e4tzlichem Platz",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Spielbereich"
+                ],
                 "price_per_night": 220.0,
                 "availability": []
             }
@@ -80,7 +108,7 @@
     {
         "hotel_id": 3,
         "name": "Seeblick Resort",
-        "address": "10 Uferstraße",
+        "address": "10 Uferstra\u00dfe",
         "city": "Genf",
         "stars": 5,
         "rooms": [
@@ -90,7 +118,12 @@
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
                 "description": "Ein ruhiges Einzelzimmer mit Seeblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Kaffeemaschine"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Kaffeemaschine"
+                ],
                 "price_per_night": 130.0,
                 "availability": []
             },
@@ -99,8 +132,13 @@
                 "hotel_id": 3,
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "Ein luxuriöses Doppelzimmer mit Balkon",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "description": "Ein luxuri\u00f6ses Doppelzimmer mit Balkon",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 200.0,
                 "availability": []
             },
@@ -110,7 +148,12 @@
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
                 "description": "Eine Familiensuite mit Seeblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Kochnische"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Kochnische"
+                ],
                 "price_per_night": 280.0,
                 "availability": []
             }
@@ -129,7 +172,11 @@
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
                 "description": "Ein Einzelzimmer in historischem Ambiente",
-                "amenities": ["WLAN", "TV", "Minibar"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 100.0,
                 "availability": []
             },
@@ -138,8 +185,13 @@
                 "hotel_id": 4,
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "Ein Doppelzimmer mit antiken Möbeln",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "description": "Ein Doppelzimmer mit antiken M\u00f6beln",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 150.0,
                 "availability": []
             },
@@ -149,7 +201,12 @@
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
                 "description": "Ein Familienzimmer mit historischem Charme",
-                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Spielbereich"
+                ],
                 "price_per_night": 220.0,
                 "availability": []
             }
@@ -168,7 +225,11 @@
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
                 "description": "Ein praktisches Einzelzimmer im Stadtzentrum",
-                "amenities": ["WLAN", "TV", "Minibar"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 90.0,
                 "availability": []
             },
@@ -178,7 +239,12 @@
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
                 "description": "Ein modernes Doppelzimmer im Stadtzentrum",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 140.0,
                 "availability": []
             },
@@ -188,7 +254,12 @@
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
                 "description": "Ein Familienzimmer im Herzen der Stadt",
-                "amenities": ["WLAN", "TV", "Minibar", "Kochnische"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Kochnische"
+                ],
                 "price_per_night": 200.0,
                 "availability": []
             }
@@ -207,7 +278,12 @@
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
                 "description": "Ein Einzelzimmer mit Meerblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 115.0,
                 "availability": []
             },
@@ -217,7 +293,12 @@
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
                 "description": "Ein Doppelzimmer mit Meerblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 170.0,
                 "availability": []
             },
@@ -227,7 +308,12 @@
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
                 "description": "Ein Familienzimmer mit Meerblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Spielbereich"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Spielbereich"
+                ],
                 "price_per_night": 230.0,
                 "availability": []
             }
@@ -235,7 +321,7 @@
     },
     {
         "hotel_id": 7,
-        "name": "Berg Rückzugsort",
+        "name": "Berg R\u00fcckzugsort",
         "address": "14 Gipfelweg",
         "city": "Zermatt",
         "stars": 5,
@@ -246,7 +332,12 @@
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
                 "description": "Ein Einzelzimmer mit Bergblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Kaffeemaschine"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Kaffeemaschine"
+                ],
                 "price_per_night": 130.0,
                 "availability": []
             },
@@ -256,7 +347,12 @@
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
                 "description": "Ein Doppelzimmer mit Bergblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 190.0,
                 "availability": []
             },
@@ -266,7 +362,12 @@
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
                 "description": "Eine Familiensuite mit Bergblick",
-                "amenities": ["WLAN", "TV", "Minibar", "Whirlpool"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Whirlpool"
+                ],
                 "price_per_night": 270.0,
                 "availability": []
             }
@@ -275,7 +376,7 @@
     {
         "hotel_id": 8,
         "name": "Stadt Komfort Hotel",
-        "address": "12 Urbanstraße",
+        "address": "12 Urbanstra\u00dfe",
         "city": "Lausanne",
         "stars": 3,
         "rooms": [
@@ -285,7 +386,11 @@
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
                 "description": "Ein komfortables Einzelzimmer in der Stadt",
-                "amenities": ["WLAN", "TV", "Minibar"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 100.0,
                 "availability": []
             },
@@ -295,7 +400,12 @@
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
                 "description": "Ein komfortables Doppelzimmer in der Stadt",
-                "amenities": ["WLAN", "TV", "Minibar", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Balkon"
+                ],
                 "price_per_night": 150.0,
                 "availability": []
             },
@@ -304,8 +414,13 @@
                 "hotel_id": 8,
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "Ein geräumiges Familienzimmer in der Stadt",
-                "amenities": ["WLAN", "TV", "Minibar", "Kochnische"],
+                "description": "Ein ger\u00e4umiges Familienzimmer in der Stadt",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Minibar",
+                    "Kochnische"
+                ],
                 "price_per_night": 210.0,
                 "availability": []
             }
@@ -314,7 +429,7 @@
     {
         "hotel_id": 9,
         "name": "Chalet Hotel",
-        "address": "56 Alpenstraße",
+        "address": "56 Alpenstra\u00dfe",
         "city": "Grindelwald",
         "stars": 4,
         "rooms": [
@@ -323,8 +438,12 @@
                 "hotel_id": 9,
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "Ein Einzelzimmer in einem gemütlichen Chalet",
-                "amenities": ["WLAN", "TV", "Kamin"],
+                "description": "Ein Einzelzimmer in einem gem\u00fctlichen Chalet",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Kamin"
+                ],
                 "price_per_night": 120.0,
                 "availability": []
             },
@@ -334,7 +453,12 @@
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
                 "description": "Ein Doppelzimmer mit alpinem Charme",
-                "amenities": ["WLAN", "TV", "Kamin", "Balkon"],
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Kamin",
+                    "Balkon"
+                ],
                 "price_per_night": 180.0,
                 "availability": []
             },
@@ -343,8 +467,13 @@
                 "hotel_id": 9,
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "Ein Familienzimmer in einem gemütlichen Chalet",
-                "amenities": ["WLAN", "TV", "Kamin", "Spielbereich"],
+                "description": "Ein Familienzimmer in einem gem\u00fctlichen Chalet",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Kamin",
+                    "Spielbereich"
+                ],
                 "price_per_night": 240.0,
                 "availability": []
             }
@@ -352,8 +481,8 @@
     },
     {
         "hotel_id": 10,
-        "name": "Öko-Freundliches Hotel",
-        "address": "78 Grünweg",
+        "name": "\u00d6ko-Freundliches Hotel",
+        "address": "78 Gr\u00fcnweg",
         "city": "St. Moritz",
         "stars": 5,
         "rooms": [
@@ -362,8 +491,12 @@
                 "hotel_id": 10,
                 "room_type": "Einzelzimmer",
                 "max_guests": 1,
-                "description": "Ein Einzelzimmer in einem öko-freundlichen Hotel",
-                "amenities": ["WLAN", "TV", "Solarstrom"],
+                "description": "Ein Einzelzimmer in einem \u00f6ko-freundlichen Hotel",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Solarstrom"
+                ],
                 "price_per_night": 125.0,
                 "availability": []
             },
@@ -372,8 +505,13 @@
                 "hotel_id": 10,
                 "room_type": "Doppelzimmer",
                 "max_guests": 2,
-                "description": "Ein Doppelzimmer mit öko-freundlichen Funktionen",
-                "amenities": ["WLAN", "TV", "Solarstrom", "Balkon"],
+                "description": "Ein Doppelzimmer mit \u00f6ko-freundlichen Funktionen",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Solarstrom",
+                    "Balkon"
+                ],
                 "price_per_night": 180.0,
                 "availability": []
             },
@@ -382,8 +520,13 @@
                 "hotel_id": 10,
                 "room_type": "Familienzimmer",
                 "max_guests": 4,
-                "description": "Ein Familienzimmer mit öko-freundlichen Annehmlichkeiten",
-                "amenities": ["WLAN", "TV", "Solarstrom", "Spielbereich"],
+                "description": "Ein Familienzimmer mit \u00f6ko-freundlichen Annehmlichkeiten",
+                "amenities": [
+                    "WLAN",
+                    "TV",
+                    "Solarstrom",
+                    "Spielbereich"
+                ],
                 "price_per_night": 250.0,
                 "availability": []
             }

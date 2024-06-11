@@ -1,12 +1,13 @@
 # business/SearchManager.py
 
-from models import Hotel, Room
+from models import Hotel, Room, Booking
 from datetime import datetime
 from typing import List
 
 class SearchManager:
-    def __init__(self, hotels: List[Hotel]):
+    def __init__(self, hotels: List[Hotel], bookings: List[Booking]):
         self.hotels = hotels
+        self.bookings = bookings
 
     def search_by_city(self, city: str) -> List[Hotel]:
         return [hotel for hotel in self.hotels if hotel.city.lower() == city.lower()]
@@ -30,11 +31,12 @@ class SearchManager:
             hotels = self.search_by_city(city)
 
         def room_available(room: Room) -> bool:
-            for booking in room.bookings:
-                booked_start = datetime.strptime(booking['start_date'], "%Y-%m-%d")
-                booked_end = datetime.strptime(booking['end_date'], "%Y-%m-%d")
-                if not (end_date < booked_start or start_date > booked_end):
-                    return False
+            for booking in self.bookings:
+                if booking.room_id == room.room_id:
+                    booked_start = datetime.strptime(booking.start_date, "%Y-%m-%d")
+                    booked_end = datetime.strptime(booking.end_date, "%Y-%m-%d")
+                    if not (end_date < booked_start or start_date > booked_end):
+                        return False
             return True
 
         return [
@@ -47,3 +49,25 @@ class SearchManager:
             if hotel.hotel_id == hotel_id:
                 return hotel
         return None
+
+    def get_available_rooms(self, hotel_id: int, guests: int, start_date: str, end_date: str) -> List[Room]:
+        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+        available_rooms = []
+
+        for hotel in self.hotels:
+            if hotel.hotel_id == hotel_id:
+                for room in hotel.rooms:
+                    if room.max_guests >= guests and self.room_available(room, start_date, end_date):
+                        available_rooms.append(room)
+
+        return available_rooms
+
+    def room_available(self, room: Room, start_date: datetime, end_date: datetime) -> bool:
+        for booking in self.bookings:
+            if booking.room_id == room.room_id:
+                booked_start = datetime.strptime(booking.start_date, "%Y-%m-%d")
+                booked_end = datetime.strptime(booking.end_date, "%Y-%m-%d")
+                if not (end_date < booked_start or start_date > booked_end):
+                    return False
+        return True

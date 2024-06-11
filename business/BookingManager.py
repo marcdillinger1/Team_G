@@ -1,54 +1,76 @@
 # business/BookingManager.py
 
-from models import Booking, User, Hotel, Room
+from models import Booking
 from datetime import datetime
 from typing import List
+import json
+
 
 class BookingManager:
-    def __init__(self, bookings: List[Booking], users: List[User], hotels: List[Hotel]):
+    def __init__(self, bookings: List[Booking], users, hotels):
         self.bookings = bookings
         self.users = users
         self.hotels = hotels
 
     def create_booking(self, user_id: int, room_id: int, hotel_id: int, start_date: str, end_date: str) -> Booking:
-        booking_id = max(booking.booking_id for booking in self.bookings) + 1 if self.bookings else 1
-        start_date = datetime.strptime(start_date, "%Y-%m-%d")
-        end_date = datetime.strptime(end_date, "%Y-%m-%d")
-        room = self.get_room(hotel_id, room_id)
+        start_date_dt = datetime.strptime(start_date, "%Y-%m-%d")
+        end_date_dt = datetime.strptime(end_date, "%Y-%m-%d")
+        total_price = self.calculate_total_price(room_id, start_date_dt, end_date_dt)
 
-        if not self.is_room_available(room, start_date, end_date):
-            raise ValueError("Room is not available for the selected dates.")
+        booking = Booking(
+            booking_id=len(self.bookings) + 1,
+            user_id=user_id,
+            room_id=room_id,
+            hotel_id=hotel_id,
+            start_date=start_date,
+            end_date=end_date,
+            total_price=total_price
+        )
+        self.bookings.append(booking)
+        self.save_booking_to_file(booking)
+        return booking
 
-        total_price = (end_date - start_date).days * room.price_per_night
-        new_booking = Booking(booking_id, user_id, room_id, hotel_id, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"), total_price)
-        self.bookings.append(new_booking)
-        return new_booking
+    def calculate_total_price(self, room_id: int, start_date: datetime, end_date: datetime) -> float:
+        room = next(room for hotel in self.hotels for room in hotel.rooms if room.room_id == room_id)
+        return room.price_per_night * (end_date - start_date).days
 
-    def get_room(self, hotel_id: int, room_id: int) -> Room:
-        for hotel in self.hotels:
-            if hotel.hotel_id == hotel_id:
-                for room in hotel.rooms:
-                    if room.room_id == room_id:
-                        return room
-        return None
+    def save_booking_to_file(self, booking: Booking):
+        try:
+            hotel = next(hotel for hotel in self.hotels if hotel.hotel_id == booking.hotel_id)
+            room = next(room for room in hotel.rooms if room.room_id == booking.room_id)
+        except StopIteration:
+            print(f"Error: Hotel ID {booking.hotel_id} or Room ID {booking.room_id} not found.")
+            return
 
-    def is_room_available(self, room: Room, start_date: datetime, end_date: datetime) -> bool:
-        for booking in self.bookings:
-            if booking.room_id == room.room_id:
-                booked_start = datetime.strptime(booking.start_date, "%Y-%m-%d")
-                booked_end = datetime.strptime(booking.end_date, "%Y-%m-%d")
-                if not (end_date <= booked_start or start_date >= booked_end):
-                    return False
-        return True
+        booking_details = {
+            "booking_id": booking.booking_id,
+            "user_id": booking.user_id,
+            "room_id": booking.room_id,
+            "hotel_id": booking.hotel_id,
+            "hotel_name": hotel.name,
+            "hotel_address": hotel.address,
+            "hotel_city": hotel.city,  # Hinzufügen der Stadt/Ort des Hotels
+            "room_type": room.room_type,
+            "room_description": room.description,
+            "room_amenities": room.amenities,
+            "max_guests": room.max_guests,
+            "price_per_night": room.price_per_night,  # Hinzufügen des Preises pro Nacht
+            "start_date": booking.start_date,
+            "end_date": booking.end_date,
+            "total_price": booking.total_price
+        }
+
+        with open(f"booking_{booking.booking_id}.json", 'w') as file:
+            json.dump(booking_details, file, indent=4)
 
     def get_bookings_by_user(self, user_id: int) -> List[Booking]:
         return [booking for booking in self.bookings if booking.user_id == user_id]
 
     def cancel_booking(self, booking_id: int) -> bool:
-        for booking in self.bookings:
-            if booking.booking_id == booking_id:
-                self.bookings.remove(booking)
-                return True
+        booking = next((b for b in self.bookings if b.booking_id == booking_id), None)
+        if booking:
+            self.bookings.remove(booking)
+            return True
         return False
 
     def get_all_bookings(self) -> List[Booking]:
