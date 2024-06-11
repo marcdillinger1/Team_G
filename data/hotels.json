@@ -12,9 +12,16 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 120.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 2,
@@ -22,9 +29,16 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 180.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 3,
@@ -32,16 +46,23 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 250.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
     {
         "hotel_id": 2,
         "name": "Hotel Geneva",
-        "address": "Rue du Rhône 50, Geneva",
+        "address": "Rue du Rh\u00f4ne 50, Geneva",
         "city": "Geneva",
         "stars": 4,
         "rooms": [
@@ -51,9 +72,15 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 100.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 5,
@@ -61,9 +88,15 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 150.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 6,
@@ -71,9 +104,15 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 220.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
@@ -90,9 +129,15 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 110.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 8,
@@ -100,9 +145,15 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 160.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 9,
@@ -110,9 +161,15 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 230.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
@@ -129,9 +186,16 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 130.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 11,
@@ -139,9 +203,16 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 190.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 12,
@@ -149,9 +220,16 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 260.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
@@ -168,9 +246,15 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 105.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 14,
@@ -178,9 +262,15 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 155.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 15,
@@ -188,9 +278,15 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 225.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
@@ -207,9 +303,16 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 115.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 17,
@@ -217,9 +320,16 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 175.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 18,
@@ -227,9 +337,16 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 245.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
@@ -246,9 +363,16 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 140.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 20,
@@ -256,9 +380,16 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 200.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 21,
@@ -266,16 +397,23 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 280.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
     {
         "hotel_id": 8,
         "name": "Hotel Interlaken",
-        "address": "Höheweg 74, Interlaken",
+        "address": "H\u00f6heweg 74, Interlaken",
         "city": "Interlaken",
         "stars": 4,
         "rooms": [
@@ -285,9 +423,15 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 110.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 23,
@@ -295,9 +439,15 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 160.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 24,
@@ -305,9 +455,15 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 230.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
@@ -324,9 +480,15 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 120.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 26,
@@ -334,9 +496,15 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 170.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 27,
@@ -344,9 +512,15 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV"
+                ],
                 "price_per_night": 240.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     },
@@ -363,9 +537,16 @@
                 "room_type": "Single",
                 "max_guests": 1,
                 "description": "A cozy single room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 135.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 29,
@@ -373,9 +554,16 @@
                 "room_type": "Double",
                 "max_guests": 2,
                 "description": "A spacious double room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 195.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             },
             {
                 "room_id": 30,
@@ -383,9 +571,16 @@
                 "room_type": "Family",
                 "max_guests": 4,
                 "description": "A large family room.",
-                "amenities": ["Wi-Fi", "TV", "Minibar"],
+                "amenities": [
+                    "Wi-Fi",
+                    "TV",
+                    "Minibar"
+                ],
                 "price_per_night": 265.0,
-                "availability": ["2024-06-15", "2024-06-16"]
+                "availability": [
+                    "2024-06-15",
+                    "2024-06-16"
+                ]
             }
         ]
     }

@@ -164,5 +164,11 @@
         "email": "md@icloud.com",
         "password": "d34ba07574f60f028f3946fbf71d2bafa520e784dd9fee636a55c4c5589da3df",
         "booking_history": []
+    },
+    {
+        "user_id": 22,
+        "email": "anna.meier@gmail.com",
+        "password": "1cc73efd5c033f451c2bb677b6d2a441904968e5a115fb5848a3d15c29b8936c",
+        "booking_history": []
     }
 ]
