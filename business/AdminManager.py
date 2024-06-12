@@ -1,40 +1,72 @@
 # business/AdminManager.py
 
-from models import Hotel, Room
-from typing import List
+from models import Hotel, Room, Booking
+import json
 
 class AdminManager:
-    def __init__(self, hotels: List[Hotel]):
+    def __init__(self, hotels):
         self.hotels = hotels
 
-    def add_hotel(self, name: str, address: str, city: str, stars: int):
-        hotel_id = max(hotel.hotel_id for hotel in self.hotels) + 1 if self.hotels else 1
-        new_hotel = Hotel(hotel_id, name, address, city, stars, [])
-        self.hotels.append(new_hotel)
+    def add_hotel(self, hotel: Hotel):
+        self.hotels.append(hotel)
+        self.save_hotels()
+        print(f"Hotel '{hotel.name}' wurde hinzugefügt.")
 
     def remove_hotel(self, hotel_id: int):
         self.hotels = [hotel for hotel in self.hotels if hotel.hotel_id != hotel_id]
+        self.save_hotels()
+        print(f"Hotel mit ID {hotel_id} wurde entfernt.")
 
-    def update_hotel(self, hotel_id: int, name: str, address: str, city: str, stars: int):
+    def update_hotel(self, hotel_id: int, name: str = None, stars: int = None, city: str = None):
         for hotel in self.hotels:
             if hotel.hotel_id == hotel_id:
                 if name:
                     hotel.name = name
-                if address:
-                    hotel.address = address
+                if stars:
+                    hotel.stars = stars
                 if city:
                     hotel.city = city
-                if stars is not None:
-                    hotel.stars = stars
+                self.save_hotels()
+                print(f"Hotel mit ID {hotel_id} wurde aktualisiert.")
+                return
+        print(f"Hotel mit ID {hotel_id} nicht gefunden.")
 
-    def add_room_to_hotel(self, hotel_id: int, room_type: str, max_guests: int, description: str, amenities: List[str], price_per_night: float):
+    def add_room_to_hotel(self, hotel_id: int, room: Room):
         for hotel in self.hotels:
             if hotel.hotel_id == hotel_id:
-                room_id = max(room.room_id for room in hotel.rooms) + 1 if hotel.rooms else 1
-                new_room = Room(room_id, hotel_id, room_type, max_guests, description, amenities, price_per_night, [])
-                hotel.rooms.append(new_room)
+                hotel.rooms.append(room)
+                self.save_hotels()
+                print(f"Zimmer mit ID {room.room_id} wurde zu Hotel mit ID {hotel_id} hinzugefügt.")
+                return
+        print(f"Hotel mit ID {hotel_id} nicht gefunden.")
 
-    def remove_room_from_hotel(self, hotel_id: int, room_id: int):
+    def view_all_bookings(self, bookings: list[Booking]):
+        for booking in bookings:
+            print(booking)
+
+    def update_booking(self, bookings: list[Booking], booking_id: int, phone: str = None):
+        for booking in bookings:
+            if booking.booking_id == booking_id:
+                if phone:
+                    booking.phone = phone
+                print(f"Buchung mit ID {booking_id} wurde aktualisiert.")
+                return
+        print(f"Buchung mit ID {booking_id} nicht gefunden.")
+
+    def update_room_availability_and_price(self, hotel_id: int, room_id: int, availability: list[str] = None, price_per_night: float = None):
         for hotel in self.hotels:
             if hotel.hotel_id == hotel_id:
-                hotel.rooms = [room for room in hotel.rooms if room.room_id != room_id]
+                for room in hotel.rooms:
+                    if room.room_id == room_id:
+                        if availability is not None:
+                            room.availability = availability
+                        if price_per_night is not None:
+                            room.price_per_night = price_per_night
+                        self.save_hotels()
+                        print(f"Zimmer mit ID {room_id} im Hotel mit ID {hotel_id} wurde aktualisiert.")
+                        return
+        print(f"Zimmer mit ID {room_id} im Hotel mit ID {hotel_id} nicht gefunden.")
+
+    def save_hotels(self):
+        with open('data/hotels.json', 'w') as f:
+            json.dump([hotel.to_dict() for hotel in self.hotels], f, indent=4)
