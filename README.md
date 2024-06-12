@@ -155,8 +155,8 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 
 ### ChatGPT
 
-#### Für die Bearbeitung dieser Prpjektarbeit haben wir sehr eng mit ChatGPT zusammengearbeitet.
-#### Nachfolgend alle links zu den Interaktionen mit ChatGPT um nachzuvollziehen und aufzuzeigen wie diese Nutzung des Tools aussah.
+#### Für die Bearbeitung dieser Projektarbeit haben wir sehr eng mit ChatGPT zusammengearbeitet.
+#### Nachfolgend alle links zu den Interaktionen mit ChatGPT um nachzuvollziehen und aufzuzeigen wie die Anwendung des Tools aussah.
 
 https://chatgpt.com/share/0580e43b-bfbd-4f13-aaf9-422c03405154
 
