@@ -13,6 +13,7 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ### Models 
 
 #### models.py: Definiert die Datenmodelle für das System.
+
 ###### Hotel: Repräsentiert ein Hotel mit Attributen wie hotel_id, name, address, city, stars und rooms.
 ###### Room: Repräsentiert ein Zimmer mit Attributen wie room_id, hotel_id, room_type, max_guests, description, amenities, price_per_night und availability.
 ###### Booking: Repräsentiert eine Buchung mit Attributen wie booking_id, user_id, room_id, hotel_id, start_date, end_date und total_price.
@@ -21,6 +22,7 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ### Datenzugriff
 
 #### data_access/data_loader.py: Lädt die Daten aus den JSON-Dateien.
+
 ###### load_hotels(file_path): Lädt die Hoteldaten aus der angegebenen JSON-Datei.
 ###### load_users(file_path): Lädt die Benutzerdaten aus der angegebenen JSON-Datei.
 ###### load_bookings(file_path): Lädt die Buchungsdaten aus der angegebenen JSON-Datei.
@@ -28,6 +30,7 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ### Geschäftslogik
 
 #### business/AdminManager.py: Bietet Verwaltungsfunktionen für Administratoren.
+
 ###### add_hotel(hotel): Fügt ein neues Hotel hinzu.
 ###### remove_hotel(hotel_id): Entfernt ein Hotel anhand seiner ID.
 ###### update_hotel(hotel_id, name, stars, city, address): Aktualisiert die Informationen eines Hotels.
@@ -38,9 +41,11 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ###### save_hotels(): Speichert die Hoteldaten in der JSON-Datei.
 
 #### business/BaseManager.py: Lädt die Basisdaten für das System.
+
 ###### __init__(): Lädt die Hotels, Benutzer und Buchungen aus den entsprechenden JSON-Dateien.
 
 #### business/BookingManager.py: Verwaltet Buchungen.
+
 ###### get_bookings_by_user(user_id): Gibt alle Buchungen eines Benutzers zurück.
 ###### make_booking(user_id, hotel_id, room_id, start_date, end_date, total_price): Erstellt eine neue Buchung.
 ###### update_booking(booking): Aktualisiert eine bestehende Buchung.
@@ -48,10 +53,12 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ###### get_booking_by_id(booking_id): Gibt eine Buchung anhand ihrer ID zurück.
 
 #### business/SearchManager.py: Ermöglicht die Suche nach Hotels.
+
 ###### search_by_city(city): Sucht nach Hotels in einer bestimmten Stadt.
 ###### search_by_city_and_stars(city, stars): Sucht nach Hotels in einer bestimmten Stadt und mit einer bestimmten Sternebewertung.
 
 #### business/UserManager.py: Verwaltet Benutzerinformationen.
+
 ###### register_user(user_id, email, password): Registriert einen neuen Benutzer.
 ###### login_user(email, password): Meldet einen Benutzer an und gibt dessen Informationen zurück.
 ###### is_admin(email, password): Überprüft, ob ein Benutzer ein Administrator ist.
@@ -59,6 +66,7 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ### Benutzeroberfläche
 
 #### console/consolebase.py: Bietet eine textbasierte Benutzeroberfläche für das System.
+
 ###### run(): Startet die Hauptschleife des Programms und zeigt das Hauptmenü an.
 ###### admin_actions(): Führt die Authentifizierung des Administrators durch und zeigt das Admin-Menü an.
 ###### admin_menu(): Zeigt das Admin-Menü mit den Verwaltungsfunktionen an.
@@ -79,10 +87,42 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ### JSON-Dateien
 
 #### data/bookings.json: Enthält die Buchungsdaten.
+
+###### booking_id: Eindeutige Kennung der Buchung.
+###### user_id: Kennung des Benutzers, der die Buchung vorgenommen hat (verweist auf users.json).
+###### room_id: Kennung des gebuchten Zimmers (verweist auf hotels.json).
+###### hotel_id: Kennung des Hotels, in dem das Zimmer gebucht wurde (verweist auf hotels.json).
+###### start_date: Beginn der Buchung (Format YYYY-MM-DD).
+###### end_date: Ende der Buchung (Format YYYY-MM-DD).
+###### total_price: Gesamtkosten der Buchung.
+
 #### data/hotels.json: Enthält die Hoteldaten inklusive Zimmerinformationen.
+
+###### hotel_id: Eindeutige Kennung des Hotels.
+###### name: Name des Hotels.
+###### address: Adresse des Hotels.
+###### city: Stadt, in der sich das Hotel befindet.
+###### stars: Sternebewertung des Hotels.
+###### rooms: Liste der Zimmer im Hotel. Jedes Zimmer enthält folgende Felder:
+
+###### room_id: Eindeutige Kennung des Zimmers.
+###### hotel_id: Kennung des Hotels, zu dem das Zimmer gehört.
+###### room_type: Zimmertyp (z.B. Einzelzimmer, Doppelzimmer).
+###### max_guests: Maximale Anzahl der Gäste im Zimmer.
+###### description: Beschreibung des Zimmers.
+###### amenities: Liste der Annehmlichkeiten im Zimmer.
+###### price_per_night: Preis pro Nacht.
+###### availability: Liste der verfügbaren Daten (Format YYYY-MM-DD).
+
 #### data/users.json: Enthält die Benutzerdaten.
 
+###### user_id: Eindeutige Kennung des Benutzers.
+###### email: E-Mail-Adresse des Benutzers (Anmeldeinformation).
+###### password: Passwort des Benutzers (sollte verschlüsselt gespeichert werden).
+###### booking_history: Liste der Buchungen des Benutzers (verweist auf bookings.json).
+
 ### Ausführung des Projekts
+
 ###### Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
 ###### Starte das Projekt, indem du main.py ausführst.
 ###### Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
@@ -115,8 +155,8 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 
 ### ChatGPT
 
-Für die Bearbeitung dieser Prpjektarbeit haben wir sehr eng mit ChatGPT zusammengearbeitet.
-Nachfolgend alle links zu den Interaktionen mit ChatGPT um nachzuvollziehen und aufzuzeigen wie diese Nutzung des Tools aussah.
+#### Für die Bearbeitung dieser Prpjektarbeit haben wir sehr eng mit ChatGPT zusammengearbeitet.
+#### Nachfolgend alle links zu den Interaktionen mit ChatGPT um nachzuvollziehen und aufzuzeigen wie diese Nutzung des Tools aussah.
 
 https://chatgpt.com/share/0580e43b-bfbd-4f13-aaf9-422c03405154
 
