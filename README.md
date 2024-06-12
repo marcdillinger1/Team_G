@@ -10,6 +10,8 @@ Dieses Projekt ist Teil des Kurses "Anwendungsentwicklung mit Python" und umfass
 
 Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen. Registrierte Nutzer können ausserdem ihre Buchungen einsehen und verwalten. Administratoren haben erweiterte Funktionen zum Verwalten von Hotelinformationen, Zimmern und Buchungen. Hier sind die relevanten Dateien und deren Funktionen im Detail:
 
+## Projektstruktur
+
 ### Models 
 
 #### models.py: Definiert die Datenmodelle für das System.
