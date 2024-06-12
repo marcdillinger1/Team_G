@@ -78,9 +78,9 @@ cancel_booking(): Ermöglicht das Stornieren einer Buchung.
 
 ### JSON-Dateien
 
-data/bookings.json: Enthält die Buchungsdaten.
-data/hotels.json: Enthält die Hoteldaten inklusive Zimmerinformationen.
-data/users.json: Enthält die Benutzerdaten.
+#### data/bookings.json: Enthält die Buchungsdaten.
+#### data/hotels.json: Enthält die Hoteldaten inklusive Zimmerinformationen.
+#### data/users.json: Enthält die Benutzerdaten.
 
 ### Ausführung des Projekts
 Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
@@ -90,7 +90,7 @@ Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweit
 
 ## UserStories
 
-###1. Als Gastnutzer (nicht eingeloggt/registriert):
+### 1. Als Gastnutzer (nicht eingeloggt/registriert):
 
 #### 1.1. Als Gastnutzer möchte ich die verfügbaren Hotels durchsuchen, damit ich dasjenige auswählen kann, welches meinen Wünschen entspricht.
 Beschreibung zur Ausführung: wählen sie im Hauptmenü "2. Search Hotel as Guest"
