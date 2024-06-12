@@ -12,7 +12,7 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 
 ### Models 
 
-##### models.py: Definiert die Datenmodelle für das System.
+#### models.py: Definiert die Datenmodelle für das System.
 Hotel: Repräsentiert ein Hotel mit Attributen wie hotel_id, name, address, city, stars und rooms.
 Room: Repräsentiert ein Zimmer mit Attributen wie room_id, hotel_id, room_type, max_guests, description, amenities, price_per_night und availability.
 Booking: Repräsentiert eine Buchung mit Attributen wie booking_id, user_id, room_id, hotel_id, start_date, end_date und total_price.
