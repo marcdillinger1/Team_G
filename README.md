@@ -13,68 +13,68 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ### Models 
 
 #### models.py: Definiert die Datenmodelle für das System.
-Hotel: Repräsentiert ein Hotel mit Attributen wie hotel_id, name, address, city, stars und rooms.
-Room: Repräsentiert ein Zimmer mit Attributen wie room_id, hotel_id, room_type, max_guests, description, amenities, price_per_night und availability.
-Booking: Repräsentiert eine Buchung mit Attributen wie booking_id, user_id, room_id, hotel_id, start_date, end_date und total_price.
-User: Repräsentiert einen Benutzer mit Attributen wie user_id, email, password und booking_history.
+###### Hotel: Repräsentiert ein Hotel mit Attributen wie hotel_id, name, address, city, stars und rooms.
+###### Room: Repräsentiert ein Zimmer mit Attributen wie room_id, hotel_id, room_type, max_guests, description, amenities, price_per_night und availability.
+###### Booking: Repräsentiert eine Buchung mit Attributen wie booking_id, user_id, room_id, hotel_id, start_date, end_date und total_price.
+###### User: Repräsentiert einen Benutzer mit Attributen wie user_id, email, password und booking_history.
 
 ### Datenzugriff
 
 #### data_access/data_loader.py: Lädt die Daten aus den JSON-Dateien.
-load_hotels(file_path): Lädt die Hoteldaten aus der angegebenen JSON-Datei.
-load_users(file_path): Lädt die Benutzerdaten aus der angegebenen JSON-Datei.
-load_bookings(file_path): Lädt die Buchungsdaten aus der angegebenen JSON-Datei.
+###### load_hotels(file_path): Lädt die Hoteldaten aus der angegebenen JSON-Datei.
+###### load_users(file_path): Lädt die Benutzerdaten aus der angegebenen JSON-Datei.
+###### load_bookings(file_path): Lädt die Buchungsdaten aus der angegebenen JSON-Datei.
 
 ### Geschäftslogik
 
 #### business/AdminManager.py: Bietet Verwaltungsfunktionen für Administratoren.
-add_hotel(hotel): Fügt ein neues Hotel hinzu.
-remove_hotel(hotel_id): Entfernt ein Hotel anhand seiner ID.
-update_hotel(hotel_id, name, stars, city, address): Aktualisiert die Informationen eines Hotels.
-add_room_to_hotel(hotel_id, room): Fügt ein Zimmer zu einem Hotel hinzu.
-view_all_bookings(bookings): Zeigt alle Buchungen an.
-update_booking(bookings, booking_id, phone): Aktualisiert eine Buchung.
-update_room_availability_and_price(hotel_id, room_id, availability, price_per_night): Aktualisiert die Verfügbarkeit und den Preis eines Zimmers.
-save_hotels(): Speichert die Hoteldaten in der JSON-Datei.
+###### add_hotel(hotel): Fügt ein neues Hotel hinzu.
+###### remove_hotel(hotel_id): Entfernt ein Hotel anhand seiner ID.
+###### update_hotel(hotel_id, name, stars, city, address): Aktualisiert die Informationen eines Hotels.
+###### add_room_to_hotel(hotel_id, room): Fügt ein Zimmer zu einem Hotel hinzu.
+###### view_all_bookings(bookings): Zeigt alle Buchungen an.
+###### update_booking(bookings, booking_id, phone): Aktualisiert eine Buchung.
+###### update_room_availability_and_price(hotel_id, room_id, availability, price_per_night): Aktualisiert die Verfügbarkeit und den Preis eines Zimmers.
+###### save_hotels(): Speichert die Hoteldaten in der JSON-Datei.
 
 #### business/BaseManager.py: Lädt die Basisdaten für das System.
-__init__(): Lädt die Hotels, Benutzer und Buchungen aus den entsprechenden JSON-Dateien.
+###### __init__(): Lädt die Hotels, Benutzer und Buchungen aus den entsprechenden JSON-Dateien.
 
 #### business/BookingManager.py: Verwaltet Buchungen.
-get_bookings_by_user(user_id): Gibt alle Buchungen eines Benutzers zurück.
-make_booking(user_id, hotel_id, room_id, start_date, end_date, total_price): Erstellt eine neue Buchung.
-update_booking(booking): Aktualisiert eine bestehende Buchung.
-cancel_booking(booking_id): Storniert eine Buchung anhand ihrer ID.
-get_booking_by_id(booking_id): Gibt eine Buchung anhand ihrer ID zurück.
+###### get_bookings_by_user(user_id): Gibt alle Buchungen eines Benutzers zurück.
+###### make_booking(user_id, hotel_id, room_id, start_date, end_date, total_price): Erstellt eine neue Buchung.
+###### update_booking(booking): Aktualisiert eine bestehende Buchung.
+###### cancel_booking(booking_id): Storniert eine Buchung anhand ihrer ID.
+###### get_booking_by_id(booking_id): Gibt eine Buchung anhand ihrer ID zurück.
 
 #### business/SearchManager.py: Ermöglicht die Suche nach Hotels.
-search_by_city(city): Sucht nach Hotels in einer bestimmten Stadt.
-search_by_city_and_stars(city, stars): Sucht nach Hotels in einer bestimmten Stadt und mit einer bestimmten Sternebewertung.
+###### search_by_city(city): Sucht nach Hotels in einer bestimmten Stadt.
+###### search_by_city_and_stars(city, stars): Sucht nach Hotels in einer bestimmten Stadt und mit einer bestimmten Sternebewertung.
 
 #### business/UserManager.py: Verwaltet Benutzerinformationen.
-register_user(user_id, email, password): Registriert einen neuen Benutzer.
-login_user(email, password): Meldet einen Benutzer an und gibt dessen Informationen zurück.
-is_admin(email, password): Überprüft, ob ein Benutzer ein Administrator ist.
+###### register_user(user_id, email, password): Registriert einen neuen Benutzer.
+###### login_user(email, password): Meldet einen Benutzer an und gibt dessen Informationen zurück.
+###### is_admin(email, password): Überprüft, ob ein Benutzer ein Administrator ist.
 
 ### Benutzeroberfläche
 
 #### console/consolebase.py: Bietet eine textbasierte Benutzeroberfläche für das System.
-run(): Startet die Hauptschleife des Programms und zeigt das Hauptmenü an.
-admin_actions(): Führt die Authentifizierung des Administrators durch und zeigt das Admin-Menü an.
-admin_menu(): Zeigt das Admin-Menü mit den Verwaltungsfunktionen an.
-add_hotel(): Ermöglicht das Hinzufügen eines neuen Hotels.
-remove_hotel(): Ermöglicht das Entfernen eines Hotels.
-update_hotel(): Ermöglicht das Aktualisieren der Hotelinformationen.
-add_room_to_hotel(): Ermöglicht das Hinzufügen eines Zimmers zu einem Hotel.
-view_all_bookings(): Zeigt alle Buchungen an.
-update_booking(): Ermöglicht das Aktualisieren einer Buchung.
-update_room_availability_and_price(): Ermöglicht das Aktualisieren der Verfügbarkeit und des Preises eines Zimmers.
-register(): Ermöglicht die Registrierung eines neuen Benutzers.
-login(): Ermöglicht die Anmeldung eines Benutzers.
-search_hotels(): Ermöglicht die Suche nach Hotels.
-view_booking_history(): Zeigt die Buchungshistorie des angemeldeten Benutzers an.
-make_booking(): Ermöglicht das Erstellen einer neuen Buchung.
-cancel_booking(): Ermöglicht das Stornieren einer Buchung.
+###### run(): Startet die Hauptschleife des Programms und zeigt das Hauptmenü an.
+###### admin_actions(): Führt die Authentifizierung des Administrators durch und zeigt das Admin-Menü an.
+###### admin_menu(): Zeigt das Admin-Menü mit den Verwaltungsfunktionen an.
+###### add_hotel(): Ermöglicht das Hinzufügen eines neuen Hotels.
+###### remove_hotel(): Ermöglicht das Entfernen eines Hotels.
+###### update_hotel(): Ermöglicht das Aktualisieren der Hotelinformationen.
+###### add_room_to_hotel(): Ermöglicht das Hinzufügen eines Zimmers zu einem Hotel.
+###### view_all_bookings(): Zeigt alle Buchungen an.
+###### update_booking(): Ermöglicht das Aktualisieren einer Buchung.
+###### update_room_availability_and_price(): Ermöglicht das Aktualisieren der Verfügbarkeit und des Preises eines Zimmers.
+###### register(): Ermöglicht die Registrierung eines neuen Benutzers.
+###### login(): Ermöglicht die Anmeldung eines Benutzers.
+###### search_hotels(): Ermöglicht die Suche nach Hotels.
+###### view_booking_history(): Zeigt die Buchungshistorie des angemeldeten Benutzers an.
+###### make_booking(): Ermöglicht das Erstellen einer neuen Buchung.
+###### cancel_booking(): Ermöglicht das Stornieren einer Buchung.
 
 ### JSON-Dateien
 
@@ -83,17 +83,17 @@ cancel_booking(): Ermöglicht das Stornieren einer Buchung.
 #### data/users.json: Enthält die Benutzerdaten.
 
 ### Ausführung des Projekts
-Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
-Starte das Projekt, indem du main.py ausführst.
-Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
-Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweiterten Verwaltungsfunktionen zuzugreifen.
+###### Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
+###### Starte das Projekt, indem du main.py ausführst.
+###### Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
+###### Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweiterten Verwaltungsfunktionen zuzugreifen.
 
 ## UserStories
 
 ### 1. Als Gastnutzer (nicht eingeloggt/registriert):
 
 #### 1.1. Als Gastnutzer möchte ich die verfügbaren Hotels durchsuchen, damit ich dasjenige auswählen kann, welches meinen Wünschen entspricht.
-Beschreibung zur Ausführung: wählen sie im Hauptmenü "2. Search Hotel as Guest"
+###### Beschreibung zur Ausführung: wählen sie im Hauptmenü "2. Search Hotel as Guest"
 
 #### 1.1.1. Ich möchte alle Hotels in einer Stadt durchsuchen, damit ich das Hotel nach meinem bevorzugten Standort (Stadt) auswählen kann.
 
