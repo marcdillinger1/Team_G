@@ -170,5 +170,17 @@
         "email": "anna.meier@gmail.com",
         "password": "1cc73efd5c033f451c2bb677b6d2a441904968e5a115fb5848a3d15c29b8936c",
         "booking_history": []
+    },
+    {
+        "user_id": 23,
+        "email": "test@test.com",
+        "password": "test1",
+        "booking_history": []
+    },
+    {
+        "user_id": 24,
+        "email": "marc@gmail.com",
+        "password": "marc",
+        "booking_history": []
     }
 ]

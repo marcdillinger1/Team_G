@@ -1,25 +1,29 @@
-# business/UserManager.py
-
-from models import User
-from typing import List
+import json
 
 class UserManager:
-    def __init__(self, users: List[User]):
-        self.users = users
-        self.admin_email = 'admin@hotel.com'
-        self.admin_password = 'admin123'  # Festgelegtes Admin-Passwort
+    def __init__(self, users_file):
+        self.users_file = users_file
+        self.users = self.load_users()
 
-    def register_user(self, email: str, password: str) -> User:
-        user_id = max(user.user_id for user in self.users) + 1 if self.users else 1
-        new_user = User(user_id, email, password, [])
-        self.users.append(new_user)
-        return new_user
+    def load_users(self):
+        with open(self.users_file, 'r') as file:
+            users = json.load(file)
+            return {user['email']: user for user in users}
 
-    def login_user(self, email: str, password: str) -> User:
-        for user in self.users:
-            if user.email == email and user.password == password:
-                return user
+    def save_users(self):
+        with open(self.users_file, 'w') as file:
+            json.dump(list(self.users.values()), file, indent=4)
+
+    def register(self, email, password):
+        if email in self.users:
+            return None
+        user_id = len(self.users) + 1
+        self.users[email] = {'user_id': user_id, 'email': email, 'password': password, 'booking_history': []}
+        self.save_users()
+        return self.users[email]
+
+    def login(self, email, password):
+        user = self.users.get(email)
+        if user and user['password'] == password:
+            return user
         return None
-
-    def is_admin(self, email: str, password: str) -> bool:
-        return email == self.admin_email and password == self.admin_password
