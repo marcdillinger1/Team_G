@@ -25,18 +25,71 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ###### Beschreibung zur Ausführung: wählen sie im Hauptmenü "2. Search Hotel as Guest"
 
 #### 1.1.1. Ich möchte alle Hotels in einer Stadt durchsuchen, damit ich das Hotel nach meinem bevorzugten Standort (Stadt) auswählen kann.
+###### Beschreibung zur Ausführung:
 
 #### 1.1.2. Ich möchte alle Hotels in einer Stadt nach der Anzahl der Sterne durchsuchen.
+###### Beschreibung zur Ausführung:
 
 #### 1.1.3. Ich möchte alle Hotels in einer Stadt durchsuchen, die Zimmer haben, die meiner Gästezahl entsprechen (nur 1 Zimmer pro Buchung), entweder mit oder ohne Anzahl der Sterne.
+###### Beschreibung zur Ausführung:
 
 #### 1.1.4. Ich möchte alle Hotels in einer Stadt durchsuchen, die während meines Aufenthaltes ("von" (start_date) und "bis" (end_date)) Zimmer für meine Gästezahl zur Verfügung haben, entweder mit oder ohne Anzahl der Sterne, damit ich nur relevante Ergebnisse sehe.
+###### Beschreibung zur Ausführung:
 
 #### 1.1.5. Ich möchte die folgenden Informationen pro Hotel sehen: Name, Adresse, Anzahl der Sterne.
+###### Beschreibung zur Ausführung:
 
 #### 1.1.6. Ich möchte ein Hotel auswählen, um die Details zu sehen (z.B. verfügbare Zimmer [siehe 1.2])
+###### Beschreibung zur Ausführung:
 
-... alle UserStories
+#### 1.2. Als Gastnutzer möchte ich Details zu verschiedenen Zimmertypen (EZ, DZ, Familienzimmer), die in einem Hotel verfügbar sind, sehen, einschließlich der maximalen Anzahl von Gästen für dieses Zimmer, Beschreibung, Preis und Ausstattung, um eine fundierte Entscheidung zu treffen.
+###### Beschreibung zur Ausführung:
+
+#### 1.2.1. Ich möchte die folgenden Informationen pro Zimmer sehen: Zimmertyp, max. Anzahl der Gäste, Beschreibung, Ausstattung, Preis pro Nacht und Gesamtpreis.
+###### Beschreibung zur Ausführung:
+
+####1.2.2. Ich möchte nur die verfügbaren Zimmer sehen
+###### Beschreibung zur Ausführung:
+
+####1.3. Als Gastbenutzer möchte ich ein Zimmer in einem bestimmten Hotel buchen, um meinen Urlaub zu planen.
+###### Beschreibung zur Ausführung:
+
+#### 1.4. Als Gastnutzer möchte ich möglichst wenig Informationen über mich preisgeben, damit meine Daten privat bleiben.
+###### Beschreibung zur Ausführung:
+#### 1.5. Als Gastnutzer möchte ich die Details meiner Reservierung in einer lesbaren Form erhalten (z.B. die Reservierung in einer dauerhaften Datei speichern), damit ich meine Buchung später überprüfen kann.
+###### Beschreibung zur Ausführung:
+#### 1.6. Als Gastbenutzer möchte ich mich mit meiner E-Mail-Adresse und einer persönlichen Kennung (Passwort) registrieren können, um weitere Funktionalitäten nutzen zu können (z.B. Buchungshistorie, Buchungsänderung etc. [siehe 2.1].
+###### Beschreibung zur Ausführung:
+### 2. Als registrierter Nutzer (möchte ich alles tun, was ein Gastnutzer tun kann, und zusätzlich...):
+
+#### 2.1. Als registrierter Benutzer möchte ich mich in mein Konto einloggen, um auf meine Buchungshistorie zuzugreifen ("lesen"), damit ich meine kommenden Reservierungen verwalten kann.
+###### Beschreibung zur Ausführung:
+
+#### 2.1.1. Die Anwendungsfälle für meine Buchungen sind "neu/erstellen", "ändern/aktualisieren", "stornieren/löschen".
+###### Beschreibung zur Ausführung:
+
+### 3. Als Admin-Nutzer:
+
+#### 3.1. Als Admin-Nutzer des Buchungssystems möchte ich die Möglichkeit haben, Hotelinformationen zu pflegen, um aktuelle Informationen im System zu haben.
+###### Beschreibung zur Ausführung:
+
+#### 3.1.1. Ich möchte neue Hotels zum System hinzufügen
+###### Beschreibung zur Ausführung:
+
+#### 3.1.2. Ich möchte Hotels aus dem System entfernen
+###### Beschreibung zur Ausführung:
+
+#### 3.1.3. Ich möchte die Informationen bestimmter Hotels aktualisieren, z. B. den Namen, die Sterne usw.
+###### Beschreibung zur Ausführung:
+
+#### 3.2. Als Admin-Nutzer des Buchungssystems möchte ich alle Buchungen aller Hotels sehen können, um eine Übersicht zu erhalten.
+###### Beschreibung zur Ausführung:
+
+#### 3.3. Ich möchte alle Buchungen bearbeiten können, um fehlende Informationen zu ergänzen (z.B. Telefonnummer) [Optional].
+###### Beschreibung zur Ausführung:
+
+#### 3.4. Ich möchte in der Lage sein, die Zimmerverfügbarkeit zu verwalten und die Preise in Echtzeit im Backend-System der Anwendung zu aktualisieren[Optional].
+###### Beschreibung zur Ausführung:
 
 ## Projektstruktur
 
