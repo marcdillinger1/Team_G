@@ -4,7 +4,7 @@ Marc Dillinger, Umut Can Özcelik, Dewa Dörflinger und Mario Lenzin
 
 ## Überblick
 
-Dieses Projekt ist Teil des Kurses "Anwendungsentwicklung mit Python" und umfasst die Entwicklung eines einfachen Hotelreservierungssystems, das über die Konsole bedient wird. 
+Dieses Projekt ist Teil des Kurses "Anwendungsentwicklung mit Python" und umfasst die Entwicklung eines einfachen Hotelreservierungssystems, das über die Konsole bedient wird. Wir haben die User Stories auf Manager aufgeteilt. SearchManager wurde von Mario bearbeitet. Booking Manager wurde von Marc bearbeitet. Hotel Manager wurde von Dewa bearbeitet. UserManager wurde von Umut bearbeitet. BaseManager wurde von Marc bearbeitet. An der ConsoleBase und den restlichen Files haben wir alle zusammen daran gearbeitet. 
 
 ## Projektbeschreibung
 
