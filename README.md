@@ -206,6 +206,9 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 
 ## Vorgehensweise
 
+Uns stand während des ganzes Projektes Github zur Verfügung. Wir haben Github benutzt, um unsere Codes zu speichern und zu verwalten. Im Team konnte jeder Änderungen vornehmen und diese hochladen. Dies hat uns eine nahtlose Zusammenarbeit ermöglicht.
+Gleichzeitig haben wir PyCharm verwendet. PyCharm haben wir genutzt, um unsere Codes zu schreiben, zu testen und Fehler zu beheben. 
+
 ## Quellen
 
 ### ChatGPT
