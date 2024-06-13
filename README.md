@@ -204,6 +204,7 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ###### password: Passwort des Benutzers (sollte verschlüsselt gespeichert werden).
 ###### booking_history: Liste der Buchungen des Benutzers (verweist auf bookings.json).
 
+## Vorgehensweise
 
 ## Quellen
 
