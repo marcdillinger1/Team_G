@@ -22,7 +22,9 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ### 1. Als Gastnutzer (nicht eingeloggt/registriert):
 
 #### 1.1. Als Gastnutzer möchte ich die verfügbaren Hotels durchsuchen, damit ich dasjenige auswählen kann, welches meinen Wünschen entspricht.
-###### Beschreibung zur Ausführung: wählen sie im Hauptmenü "2. Search Hotel as Guest"
+###### Beschreibung zur Ausführung: 
+####### - Starte das Projekt, indem du main.py ausführst (python main.py).
+####### - Im Hauptmenü wähle die Option "2. Search Hotel as Guest", indem du die Zahl 2 eingibst und Enter drückst.
 
 #### 1.1.1. Ich möchte alle Hotels in einer Stadt durchsuchen, damit ich das Hotel nach meinem bevorzugten Standort (Stadt) auswählen kann.
 ###### Beschreibung zur Ausführung:
