@@ -10,6 +10,34 @@ Dieses Projekt ist Teil des Kurses "Anwendungsentwicklung mit Python" und umfass
 
 Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen. Registrierte Nutzer können ausserdem ihre Buchungen einsehen und verwalten. Administratoren haben erweiterte Funktionen zum Verwalten von Hotelinformationen, Zimmern und Buchungen. Hier sind die relevanten Dateien und deren Funktionen im Detail:
 
+## Ausführung des Projekts
+
+##### Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
+##### Starte das Projekt, indem du main.py ausführst.
+##### Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
+##### Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweiterten Verwaltungsfunktionen zuzugreifen.
+
+## UserStories
+
+### 1. Als Gastnutzer (nicht eingeloggt/registriert):
+
+#### 1.1. Als Gastnutzer möchte ich die verfügbaren Hotels durchsuchen, damit ich dasjenige auswählen kann, welches meinen Wünschen entspricht.
+###### Beschreibung zur Ausführung: wählen sie im Hauptmenü "2. Search Hotel as Guest"
+
+#### 1.1.1. Ich möchte alle Hotels in einer Stadt durchsuchen, damit ich das Hotel nach meinem bevorzugten Standort (Stadt) auswählen kann.
+
+#### 1.1.2. Ich möchte alle Hotels in einer Stadt nach der Anzahl der Sterne durchsuchen.
+
+#### 1.1.3. Ich möchte alle Hotels in einer Stadt durchsuchen, die Zimmer haben, die meiner Gästezahl entsprechen (nur 1 Zimmer pro Buchung), entweder mit oder ohne Anzahl der Sterne.
+
+#### 1.1.4. Ich möchte alle Hotels in einer Stadt durchsuchen, die während meines Aufenthaltes ("von" (start_date) und "bis" (end_date)) Zimmer für meine Gästezahl zur Verfügung haben, entweder mit oder ohne Anzahl der Sterne, damit ich nur relevante Ergebnisse sehe.
+
+#### 1.1.5. Ich möchte die folgenden Informationen pro Hotel sehen: Name, Adresse, Anzahl der Sterne.
+
+#### 1.1.6. Ich möchte ein Hotel auswählen, um die Details zu sehen (z.B. verfügbare Zimmer [siehe 1.2])
+
+... alle UserStories
+
 ## Projektstruktur
 
 ### Models 
@@ -122,35 +150,6 @@ Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzume
 ###### email: E-Mail-Adresse des Benutzers (Anmeldeinformation).
 ###### password: Passwort des Benutzers (sollte verschlüsselt gespeichert werden).
 ###### booking_history: Liste der Buchungen des Benutzers (verweist auf bookings.json).
-
-### Ausführung des Projekts
-
-###### Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
-###### Starte das Projekt, indem du main.py ausführst.
-###### Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
-###### Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweiterten Verwaltungsfunktionen zuzugreifen.
-
-## UserStories
-
-### 1. Als Gastnutzer (nicht eingeloggt/registriert):
-
-#### 1.1. Als Gastnutzer möchte ich die verfügbaren Hotels durchsuchen, damit ich dasjenige auswählen kann, welches meinen Wünschen entspricht.
-###### Beschreibung zur Ausführung: wählen sie im Hauptmenü "2. Search Hotel as Guest"
-
-#### 1.1.1. Ich möchte alle Hotels in einer Stadt durchsuchen, damit ich das Hotel nach meinem bevorzugten Standort (Stadt) auswählen kann.
-
-#### 1.1.2. Ich möchte alle Hotels in einer Stadt nach der Anzahl der Sterne durchsuchen.
-
-#### 1.1.3. Ich möchte alle Hotels in einer Stadt durchsuchen, die Zimmer haben, die meiner Gästezahl entsprechen (nur 1 Zimmer pro Buchung), entweder mit oder ohne Anzahl der Sterne.
-
-#### 1.1.4. Ich möchte alle Hotels in einer Stadt durchsuchen, die während meines Aufenthaltes ("von" (start_date) und "bis" (end_date)) Zimmer für meine Gästezahl zur Verfügung haben, entweder mit oder ohne Anzahl der Sterne, damit ich nur relevante Ergebnisse sehe.
-
-#### 1.1.5. Ich möchte die folgenden Informationen pro Hotel sehen: Name, Adresse, Anzahl der Sterne.
-
-#### 1.1.6. Ich möchte ein Hotel auswählen, um die Details zu sehen (z.B. verfügbare Zimmer [siehe 1.2])
-
-... alle UserStories
-
 
 
 ## Quellen
