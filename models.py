@@ -1,5 +1,5 @@
 class Hotel:
-    def __init__(self, hotel_id, name, address, city, stars, rooms):
+    def __init__(self, hotel_id, name, address, city, stars, rooms): # Initialisiert ein Hotel-Objekt mit den gegebenen Attributen
         self.hotel_id = hotel_id
         self.name = name
         self.address = address
@@ -7,7 +7,7 @@ class Hotel:
         self.stars = stars
         self.rooms = rooms
 
-    def to_dict(self):
+    def to_dict(self): # Wandelt das Hotel-Objekt in ein Dictionary um, inklusive der Zimmer
         return {
             'hotel_id': self.hotel_id,
             'name': self.name,
@@ -18,7 +18,7 @@ class Hotel:
         }
 
 class Room:
-    def __init__(self, room_id, hotel_id, room_type, max_guests, description, amenities, price_per_night, availability):
+    def __init__(self, room_id, hotel_id, room_type, max_guests, description, amenities, price_per_night, availability): # Initialisiert ein Zimmer-Objekt mit den gegebenen Attributen
         self.room_id = room_id
         self.hotel_id = hotel_id
         self.room_type = room_type
@@ -28,7 +28,7 @@ class Room:
         self.price_per_night = price_per_night
         self.availability = availability
 
-    def to_dict(self):
+    def to_dict(self): # Wandelt das Zimmer-Objekt in ein Dictionary um
         return {
             'room_id': self.room_id,
             'hotel_id': self.hotel_id,
@@ -41,7 +41,7 @@ class Room:
         }
 
 class Booking:
-    def __init__(self, booking_id, user_id, room_id, hotel_id, start_date, end_date, total_price):
+    def __init__(self, booking_id, user_id, room_id, hotel_id, start_date, end_date, total_price): # Initialisiert ein Buchungs-Objekt mit den gegebenen Attributen
         self.booking_id = booking_id
         self.user_id = user_id
         self.room_id = room_id
@@ -50,7 +50,7 @@ class Booking:
         self.end_date = end_date
         self.total_price = total_price
 
-    def to_dict(self):
+    def to_dict(self): # Wandelt das Buchungs-Objekt in ein Dictionary um
         return {
             'booking_id': self.booking_id,
             'user_id': self.user_id,
@@ -62,13 +62,13 @@ class Booking:
         }
 
 class User:
-    def __init__(self, user_id, email, password, booking_history):
+    def __init__(self, user_id, email, password, booking_history): # Initialisiert ein Benutzer-Objekt mit den gegebenen Attributen
         self.user_id = user_id
         self.email = email
         self.password = password
         self.booking_history = booking_history
 
-    def to_dict(self):
+    def to_dict(self): # Wandelt das Benutzer-Objekt in ein Dictionary um
         return {
             'user_id': self.user_id,
             'email': self.email,
