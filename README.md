@@ -17,7 +17,7 @@ Unser Projektteam besteht aus vier Mitgliedern, die jeweils spezifische Teile de
 Aber alles in allem haben wir uns überall gegenseitig geholfen, wenn gewisse Dinge nicht so funktionierten wie wir es wollten. 
 
 
-### Technologische Implementierung
+## Technologische Implementierung
 
 Das Hotelreservierungssystem ist fast komplett in Python programmiert. Wir haben das Programm so strukturiert, dass es klar und einfach zu verstehen ist. Die einzelnen Funktionen des Systems, wie Nutzerverwaltung oder Buchungslogik, sind in separaten Dateien organisiert, was es uns erleichtert, Fehler zu finden und das System zu erweitern.
 
@@ -26,12 +26,12 @@ Wir nutzen auch eine virtuelle Umgebung, um sicherzustellen, dass alle benötigt
 Für die Speicherung und Verwaltung von Daten wie Benutzerinformationen, Zimmerdetails und Buchungen verwenden wir JSON-Dateien. JSON (JavaScript Object Notation) ist ein einfaches und flexibles Datenformat, das es uns ermöglicht, Daten strukturiert und leicht lesbar zu speichern. Dies erleichtert nicht nur die Datenmanipulation und das Debugging, sondern ermöglicht auch eine einfache Skalierung und Anpassung des Systems, da neue Datenstrukturen ohne großen Aufwand hinzugefügt oder geändert werden können.
 
 
-### Projektbeschreibung
+## Projektbeschreibung
 
 Das System ist so konzipiert, dass es sowohl für die Kunden als auch für die Hotelmanager benutzerfreundlich ist. Nutzer können nach verfügbaren Zimmern suchen, Buchungen vornehmen und ihre Reservierungen verwalten. Auf der anderen Seite haben Hotelinhaber die Möglichkeit, ihre Zimmer zu verwalten, Buchungen zu überprüfen und Berichte über die Belegung und andere wichtige Metriken zu erhalten. Das Ganze läuft über eine einfache Konsole, was bedeutet, dass alles über Befehle und Eingaben am Computer gesteuert wird. 
 Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folgen Sie diesen Schritten zur Ausführung des Projekts:
 
-### Schritte zur Ausführung:
+## Schritte zur Ausführung:
 
 1. Starte das Projekt:
 
@@ -40,7 +40,7 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
     ```
 2. Verwende das Menü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
 
-### Ausführung von User Stories
+## Ausführung von User Stories
 
 ### 1. Als Gastnutzer (nicht eingeloggt/registriert):
 
