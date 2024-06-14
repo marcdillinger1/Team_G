@@ -2,9 +2,9 @@
 
 Marc Dillinger, Umut Can Özcelik, Dewa Dörflinger und Mario Lenzin
 
-# Projektüberblick
+## Projektüberblick
 
-Unser Projekt im Modul "Anwendungsentwicklung mit Python", zielt darauf ab, ein einfaches, konsolenbasiertes Hotelreservierungssystem zu entwickeln. Dieses System ist darauf ausgelegt, Hotels buchen zu können und für Hotelinhaber diese zu verwalten. 
+Unser Projekt im Modul "Anwendungsentwicklung mit Python" ist die Entwicklung eines konsolenbasierten Hotelreservierungssystems. Das Ziel ist es, ein einfaches System zu schaffen, mit dem Nutzer Hotels buchen und Hotelinhaber ihre Unterkünfte verwalten können. Das System soll die täglichen Aufgaben eines Hotels, wie das Verwalten von Buchungen und Zimmern, vereinfachen.
 
 ## Teamzusammensetzung und Rollen
 
@@ -15,14 +15,18 @@ Unser Projektteam besteht aus fünf Mitgliedern, die jeweils spezifische Teile d
 - **Umut**: Hat den [`UserManager.py`](business/UserManager.py) entwickelt, der Benutzerkonten verwaltet, einschließlich der Registrierung neuer Benutzer und der Pflege bestehender Benutzerdaten.
 - **Mario**: Hat den [`BaseManager.py`](business/BaseManager.py) entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt. Seine Arbeit mit Dewa an der [`ConsoleBase.py`](console/ConsoleBase.py) unterstützte die Integration aller einzelnen Manager in ein kohärentes Gesamtsystem.
 
-## Technologische Details
+### Technologische Implementierung
 
-Das System ist fast vollständig in Python geschrieben, wobei besonderer Wert auf Modularität und Wiederverwendbarkeit des Codes gelegt wurde. Die Konsole dient als primäre Benutzerschnittstelle, wodurch das System leicht zugänglich und einfach zu bedienen ist.
+Das Hotelreservierungssystem ist komplett in Python programmiert. Python ist super, weil es nicht nur einfach zu lernen und zu verwenden ist, sondern auch mächtige Bibliotheken bietet, die uns helfen, Dinge wie Datenmanagement und Benutzeroberfläche leichter zu handhaben. Wir haben das Programm so strukturiert, dass es klar und einfach zu verstehen ist. Die einzelnen Funktionen des Systems, wie Nutzerverwaltung oder Buchungslogik, sind in separaten Dateien organisiert, was es uns erleichtert, Fehler zu finden und das System zu erweitern.
+
+Wir nutzen auch eine virtuelle Umgebung, um sicherzustellen, dass alle benötigten Bibliotheken richtig installiert sind und keine Konflikte mit anderen Programmen entstehen. Dies ist besonders hilfreich, da jeder von uns auf verschiedenen Computern arbeitet.
+
+Für die Speicherung und Verwaltung von Daten wie Benutzerinformationen, Zimmerdetails und Buchungen verwenden wir JSON-Dateien. JSON (JavaScript Object Notation) ist ein einfaches und flexibles Datenformat, das es uns ermöglicht, Daten strukturiert und leicht lesbar zu speichern. Dies erleichtert nicht nur die Datenmanipulation und das Debugging, sondern ermöglicht auch eine einfache Skalierung und Anpassung des Systems, da neue Datenstrukturen ohne großen Aufwand hinzugefügt oder geändert werden können.
 
 
-## Projektbeschreibung
+### Projektbeschreibung
 
-Das Hotelreservierungssystem ermöglicht Benutzern, sich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen. Registrierte Nutzer können ausserdem ihre Buchungen einsehen und verwalten. Administratoren haben erweiterte Funktionen zum Verwalten von Hotelinformationen, Zimmern und Buchungen. Hier sind die relevanten Dateien und deren Funktionen im Detail:
+Das System ist so konzipiert, dass es sowohl für die Kunden als auch für die Hotelmanager benutzerfreundlich ist. Nutzer können nach verfügbaren Zimmern suchen, Buchungen vornehmen und ihre Reservierungen verwalten. Auf der anderen Seite haben Hotelinhaber die Möglichkeit, ihre Zimmer zu verwalten, Buchungen zu überprüfen und Berichte über die Belegung und andere wichtige Metriken zu erhalten. Das Ganze läuft über eine einfache Konsole, was bedeutet, dass alles über Befehle und Eingaben am Computer gesteuert wird.
 
 ## Ausführung des Projekts
 
