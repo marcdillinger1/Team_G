@@ -2,9 +2,23 @@
 
 Marc Dillinger, Umut Can Özcelik, Dewa Dörflinger und Mario Lenzin
 
-## Überblick
+# Projektüberblick
 
-Dieses Projekt ist Teil des Kurses "Anwendungsentwicklung mit Python" und umfasst die Entwicklung eines einfachen Hotelreservierungssystems, das über die Konsole bedient wird. Wir haben die User Stories auf Manager aufgeteilt. SearchManager wurde von Marc bearbeitet. Booking Manager wurde von Marc bearbeitet. Admin Manager wurde von Dewa bearbeitet. UserManager wurde von Umut bearbeitet. BaseManager wurde von Mario bearbeitet. An der ConsoleBase und den restlichen Files haben hauptsächlich Dewa und Mario zusammen daran gearbeitet. 
+Unser Projekt im Modul "Anwendungsentwicklung mit Python", zielt darauf ab, ein einfaches, konsolenbasiertes Hotelreservierungssystem zu entwickeln. Dieses System ist darauf ausgelegt, Hotels buchen zu können und für Hotelinhaber diese zu verwalten. 
+
+## Teamzusammensetzung und Rollen
+
+Unser Projektteam besteht aus fünf Mitgliedern, die jeweils spezifische Teile des Systems bearbeitet haben:
+
+- **Marc**: Verantwortlich für den `SearchManager`, der es ermöglicht, nach verfügbaren Zimmern zu suchen. Marc hat auch den `BookingManager` entwickelt, der die Buchungslogik und -verwaltung übernimmt.
+- **Dewa**: Zuständig für den `AdminManager`, der administrative Aufgaben wie die Verwaltung von Hotelzimmern und Raten ermöglicht. Zusammen mit Mario hat Dewa auch an der `ConsoleBase` und weiteren gemeinsamen Dateien gearbeitet, die für die grundlegende Struktur des Systems entscheidend sind.
+- **Umut**: Hat den `UserManager` entwickelt, der Benutzerkonten verwaltet, einschließlich der Registrierung neuer Benutzer und der Pflege bestehender Benutzerdaten.
+- **Mario**: Hat den `BaseManager` entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt. Seine Arbeit mit Dewa an der `ConsoleBase` unterstützte die Integration aller einzelnen Manager in ein kohärentes Gesamtsystem.
+
+## Technologische Details
+
+Das System ist vollständig in Python geschrieben, wobei besonderer Wert auf Modularität und Wiederverwendbarkeit des Codes gelegt wurde. Die Konsole dient als primäre Benutzerschnittstelle, wodurch das System leicht zugänglich und einfach zu bedienen ist.
+
 
 ## Projektbeschreibung
 
