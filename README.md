@@ -4,7 +4,7 @@ Marc Dillinger, Umut Can Özcelik, Dewa Dörflinger und Mario Lenzin
 
 ## Projektüberblick
 
-Unser Projekt im Modul "Anwendungsentwicklung mit Python" ist die Entwicklung eines konsolenbasierten Hotelreservierungssystems. Das Ziel ist es, ein einfaches System zu schaffen, mit dem Nutzer Hotels buchen und Hotelinhaber ihre Unterkünfte verwalten können. Das System soll die täglichen Aufgaben eines Hotels, wie das Verwalten von Buchungen und Zimmern, vereinfachen.
+Bei unserem Projekt im Modul "Anwendungsentwicklung mit Python" geht es um ein konsolenbasierten Hotelreservierungssystems. Das Ziel ist es, ein einfaches System zu schaffen, mit dem Nutzer Hotels buchen und Hotelinhaber ihre Unterkünfte verwalten können. 
 
 ## Teamzusammensetzung und Rollen
 
@@ -19,7 +19,7 @@ Aber alles in allem haben wir uns überall gegenseitig geholfen, wenn gewisse Di
 
 ### Technologische Implementierung
 
-Das Hotelreservierungssystem ist komplett in Python programmiert. Python ist super, weil es nicht nur einfach zu lernen und zu verwenden ist, sondern auch mächtige Bibliotheken bietet, die uns helfen, Dinge wie Datenmanagement und Benutzeroberfläche leichter zu handhaben. Wir haben das Programm so strukturiert, dass es klar und einfach zu verstehen ist. Die einzelnen Funktionen des Systems, wie Nutzerverwaltung oder Buchungslogik, sind in separaten Dateien organisiert, was es uns erleichtert, Fehler zu finden und das System zu erweitern.
+Das Hotelreservierungssystem ist fast komplett in Python programmiert. Wir haben das Programm so strukturiert, dass es klar und einfach zu verstehen ist. Die einzelnen Funktionen des Systems, wie Nutzerverwaltung oder Buchungslogik, sind in separaten Dateien organisiert, was es uns erleichtert, Fehler zu finden und das System zu erweitern.
 
 Wir nutzen auch eine virtuelle Umgebung, um sicherzustellen, dass alle benötigten Bibliotheken richtig installiert sind und keine Konflikte mit anderen Programmen entstehen. Dies ist besonders hilfreich, da jeder von uns auf verschiedenen Computern arbeitet.
 
@@ -33,10 +33,10 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 ## Ausführung des Projekts
 
-##### Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
-##### Starte das Projekt, indem du main.py ausführst.
-##### Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
-##### Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweiterten Verwaltungsfunktionen zuzugreifen.
+##### 1. Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
+##### 2. Starte das Projekt, indem du main.py ausführst.
+##### 3. Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
+##### 4. Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweiterten Verwaltungsfunktionen zuzugreifen.
 
 ## UserStories
 
