@@ -3,7 +3,7 @@
 import json
 from models import Hotel, Room, Booking, User
 
-class DataLoader:
+class DataLoader:  # Load hotel data and create Hotel objects.
     @staticmethod
     def load_hotels(file_path):
         with open(file_path, 'r') as file:
@@ -14,13 +14,15 @@ class DataLoader:
                 hotel = Hotel(rooms=rooms, **hotel_data)
                 hotels.append(hotel)
             return hotels
-
+            
+     # Load user data and create User objects.
     @staticmethod
     def load_users(file_path):
         with open(file_path, 'r') as file:
             users_data = json.load(file)
             return [User(**user_data) for user_data in users_data]
-
+            
+    # Load booking data and create Booking objects.
     @staticmethod
     def load_bookings(file_path):
         with open(file_path, 'r') as file:
