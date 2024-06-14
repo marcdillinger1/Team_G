@@ -154,7 +154,7 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 ## Projektstruktur
 
-### Models 
+### Models
 
 #### models.py: Definiert die Datenmodelle für das System.
 
@@ -175,37 +175,36 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 #### business/AdminManager.py: Bietet Verwaltungsfunktionen für Administratoren.
 
-###### add_hotel(hotel): Fügt ein neues Hotel hinzu.
-###### remove_hotel(hotel_id): Entfernt ein Hotel anhand seiner ID.
-###### update_hotel(hotel_id, name, stars, city, address): Aktualisiert die Informationen eines Hotels.
-###### add_room_to_hotel(hotel_id, room): Fügt ein Zimmer zu einem Hotel hinzu.
-###### view_all_bookings(bookings): Zeigt alle Buchungen an.
-###### update_booking(bookings, booking_id, phone): Aktualisiert eine Buchung.
-###### update_room_availability_and_price(hotel_id, room_id, availability, price_per_night): Aktualisiert die Verfügbarkeit und den Preis eines Zimmers.
-###### save_hotels(): Speichert die Hoteldaten in der JSON-Datei.
+###### add_hotel(): Fügt ein neues Hotel hinzu.
+###### update_hotel(): Aktualisiert die Informationen eines Hotels.
+###### delete_hotel(): Entfernt ein Hotel anhand seiner ID.
+###### view_all_bookings(): Zeigt alle Buchungen an.
+###### update_booking(): Aktualisiert eine Buchung.
 
 #### business/BaseManager.py: Lädt die Basisdaten für das System.
 
-###### __init__(): Lädt die Hotels, Benutzer und Buchungen aus den entsprechenden JSON-Dateien.
+###### init(): Lädt die Hotels, Benutzer und Buchungen aus den entsprechenden JSON-Dateien.
 
 #### business/BookingManager.py: Verwaltet Buchungen.
 
 ###### get_bookings_by_user(user_id): Gibt alle Buchungen eines Benutzers zurück.
 ###### make_booking(user_id, hotel_id, room_id, start_date, end_date, total_price): Erstellt eine neue Buchung.
-###### update_booking(booking): Aktualisiert eine bestehende Buchung.
+###### make_booking_as_guest(hotel_id, room_id, start_date, end_date, total_price): Erstellt eine neue Buchung als Gast.
+###### update_booking(booking_id, start_date, end_date): Aktualisiert eine bestehende Buchung.
 ###### cancel_booking(booking_id): Storniert eine Buchung anhand ihrer ID.
-###### get_booking_by_id(booking_id): Gibt eine Buchung anhand ihrer ID zurück.
+###### calculate_price(hotel_id, room_id, start_date, end_date): Berechnet den Gesamtpreis einer Buchung.
+###### generate_booking_confirmation(booking): Generiert eine Buchungsbestätigung als JSON-Datei.
 
 #### business/SearchManager.py: Ermöglicht die Suche nach Hotels.
 
+###### search(city, stars=None, guests=None, start_date=None, end_date=None): Sucht nach Hotels basierend auf verschiedenen Kriterien.
 ###### search_by_city(city): Sucht nach Hotels in einer bestimmten Stadt.
-###### search_by_city_and_stars(city, stars): Sucht nach Hotels in einer bestimmten Stadt und mit einer bestimmten Sternebewertung.
+###### is_room_available(hotel_id, room_id, start_date, end_date): Überprüft die Verfügbarkeit eines Zimmers.
 
 #### business/UserManager.py: Verwaltet Benutzerinformationen.
 
-###### register_user(user_id, email, password): Registriert einen neuen Benutzer.
-###### login_user(email, password): Meldet einen Benutzer an und gibt dessen Informationen zurück.
-###### is_admin(email, password): Überprüft, ob ein Benutzer ein Administrator ist.
+###### register(email, password): Registriert einen neuen Benutzer.
+###### login(email, password): Meldet einen Benutzer an und gibt dessen Informationen zurück.
 
 ### Benutzeroberfläche
 
@@ -213,19 +212,17 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 ###### run(): Startet die Hauptschleife des Programms und zeigt das Hauptmenü an.
 ###### admin_actions(): Führt die Authentifizierung des Administrators durch und zeigt das Admin-Menü an.
-###### admin_menu(): Zeigt das Admin-Menü mit den Verwaltungsfunktionen an.
-###### add_hotel(): Ermöglicht das Hinzufügen eines neuen Hotels.
-###### remove_hotel(): Ermöglicht das Entfernen eines Hotels.
-###### update_hotel(): Ermöglicht das Aktualisieren der Hotelinformationen.
-###### add_room_to_hotel(): Ermöglicht das Hinzufügen eines Zimmers zu einem Hotel.
-###### view_all_bookings(): Zeigt alle Buchungen an.
-###### update_booking(): Ermöglicht das Aktualisieren einer Buchung.
-###### update_room_availability_and_price(): Ermöglicht das Aktualisieren der Verfügbarkeit und des Preises eines Zimmers.
+###### show_guest_menu(): Zeigt das Menü für Gäste an.
+###### show_user_menu(): Zeigt das Menü für eingeloggte Benutzer an.
 ###### register(): Ermöglicht die Registrierung eines neuen Benutzers.
 ###### login(): Ermöglicht die Anmeldung eines Benutzers.
-###### search_hotels(): Ermöglicht die Suche nach Hotels.
+###### search_hotels(): Ermöglicht die Suche nach Hotels für eingeloggte Benutzer.
+###### search_hotels_as_guest(): Ermöglicht die Suche nach Hotels für Gäste.
+###### display_hotels(hotels): Zeigt die gefundenen Hotels an.
+###### make_booking(): Ermöglicht das Erstellen einer neuen Buchung für eingeloggte Benutzer.
+###### make_booking_as_guest(): Ermöglicht das Erstellen einer neuen Buchung für Gäste.
 ###### view_booking_history(): Zeigt die Buchungshistorie des angemeldeten Benutzers an.
-###### make_booking(): Ermöglicht das Erstellen einer neuen Buchung.
+###### update_booking(): Ermöglicht das Aktualisieren einer Buchung.
 ###### cancel_booking(): Ermöglicht das Stornieren einer Buchung.
 
 ### JSON-Dateien
@@ -248,7 +245,6 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 ###### city: Stadt, in der sich das Hotel befindet.
 ###### stars: Sternebewertung des Hotels.
 ###### rooms: Liste der Zimmer im Hotel. Jedes Zimmer enthält folgende Felder:
-
 ###### room_id: Eindeutige Kennung des Zimmers.
 ###### hotel_id: Kennung des Hotels, zu dem das Zimmer gehört.
 ###### room_type: Zimmertyp (z.B. Einzelzimmer, Doppelzimmer).
@@ -256,7 +252,6 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 ###### description: Beschreibung des Zimmers.
 ###### amenities: Liste der Annehmlichkeiten im Zimmer.
 ###### price_per_night: Preis pro Nacht.
-###### availability: Liste der verfügbaren Daten (Format YYYY-MM-DD).
 
 #### data/users.json: Enthält die Benutzerdaten.
 
