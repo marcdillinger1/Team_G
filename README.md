@@ -8,7 +8,7 @@ Bei unserem Projekt im Modul "Anwendungsentwicklung mit Python" geht es um ein k
 
 ## Teamzusammensetzung und Rollen
 
-Unser Projektteam besteht aus fünf Mitgliedern, die jeweils spezifische Teile des Systems bearbeitet haben:
+Unser Projektteam besteht aus vier Mitgliedern, die jeweils spezifische Teile des Systems bearbeitet haben:
 
 - **Marc**: Verantwortlich für die [`consolebase.py`](console/consolebase.py) und den [`AdminManager.py`](business/AdminManager.py), die es ermöglichen, administrative Aufgaben wie die Verwaltung von Hotelzimmern und Raten zu handhaben und die grundlegende Struktur des Systems zu unterstützen.
 - **Dewa**: Hat an der [`consolebase.py`](console/consolebase.py) gearbeitet und den [`BaseManager.py`](business/BaseManager.py) entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt.
