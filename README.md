@@ -31,126 +31,175 @@ Für die Speicherung und Verwaltung von Daten wie Benutzerinformationen, Zimmerd
 Das System ist so konzipiert, dass es sowohl für die Kunden als auch für die Hotelmanager benutzerfreundlich ist. Nutzer können nach verfügbaren Zimmern suchen, Buchungen vornehmen und ihre Reservierungen verwalten. Auf der anderen Seite haben Hotelinhaber die Möglichkeit, ihre Zimmer zu verwalten, Buchungen zu überprüfen und Berichte über die Belegung und andere wichtige Metriken zu erhalten. Das Ganze läuft über eine einfache Konsole, was bedeutet, dass alles über Befehle und Eingaben am Computer gesteuert wird. 
 Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folgen Sie diesen Schritten zur Ausführung des Projekts:
 
-## Ausführung des Projekts
+### Schritte zur Ausführung:
 
-##### 1. Stelle sicher, dass die JSON-Dateien (bookings.json, hotels.json, users.json) im data-Verzeichnis vorhanden sind.
-##### 2. Starte das Projekt, indem du main.py ausführst.
-##### 3. Verwende das Hauptmenü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
-##### 4. Administratoren können sich mit dem Passwort Admin1 anmelden, um auf die erweiterten Verwaltungsfunktionen zuzugreifen.
+1. Starte das Projekt:
 
-## UserStories
+    ```sh
+    python main.py
+    ```
+2. Verwende das Menü, um dich zu registrieren, anzumelden, Hotels zu durchsuchen und Buchungen vorzunehmen.
+
+### Ausführung von User Stories
 
 ### 1. Als Gastnutzer (nicht eingeloggt/registriert):
 
 #### 1.1. Als Gastnutzer möchte ich die verfügbaren Hotels durchsuchen, damit ich dasjenige auswählen kann, welches meinen Wünschen entspricht.
-###### Beschreibung zur Ausführung: 
-###### - Starte das Projekt, indem du main.py ausführst (python main.py).
-###### - Im Hauptmenü wähle die Option "2. Search Hotel as Guest", indem du die Zahl 2 eingibst und Enter drückst.
+   - **Beschreibung zur Ausführung:**
+     1. Starte das Projekt, indem du `main.py` ausführst:
+
+        ```sh
+        python main.py
+        ```
+
+     2. Im Hauptmenü wähle die Option "3. Search Hotel as Guest", indem du die Zahl `3` eingibst und `Enter` drückst.
 
 #### 1.1.1. Ich möchte alle Hotels in einer Stadt durchsuchen, damit ich das Hotel nach meinem bevorzugten Standort (Stadt) auswählen kann.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 1.1, um das Suchmenü zu öffnen.
+     2. Gib den Namen der Stadt ein, nach der du suchen möchtest (Z.b. Basel, Zurich oder Bern)
+     3. Drücke `Enter`, um die Suche zu starten.
 
 #### 1.1.2. Ich möchte alle Hotels in einer Stadt nach der Anzahl der Sterne durchsuchen.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 1.1.1, um eine Stadt einzugeben.
+     2. Gib die Anzahl der Sterne ein, nach denen du filtern möchtest (z.B. 3 für 3-Sterne-Hotels).
+     3. Drücke `Enter`, um die gefilterte Suche zu starten.
 
 #### 1.1.3. Ich möchte alle Hotels in einer Stadt durchsuchen, die Zimmer haben, die meiner Gästezahl entsprechen (nur 1 Zimmer pro Buchung), entweder mit oder ohne Anzahl der Sterne.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 1.1.1, um eine Stadt einzugeben.
+     2. Gib die Anzahl der Sterne ein, falls gewünscht.
+     3. Gib die Anzahl der Gäste ein.
+     4. Drücke `Enter`, um die Suche zu starten.
 
 #### 1.1.4. Ich möchte alle Hotels in einer Stadt durchsuchen, die während meines Aufenthaltes ("von" (start_date) und "bis" (end_date)) Zimmer für meine Gästezahl zur Verfügung haben, entweder mit oder ohne Anzahl der Sterne, damit ich nur relevante Ergebnisse sehe.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 1.1.3, um Stadt, Sterne und Gästezahl einzugeben.
+     2. Gib das Startdatum (von) in das angezeigte Format ein.
+     3. Gib das Enddatum (bis) in das angezeigte Format ein.
+     4. Drücke `Enter`, um die Suche zu starten.
 
 #### 1.1.5. Ich möchte die folgenden Informationen pro Hotel sehen: Name, Adresse, Anzahl der Sterne.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Nach der Durchführung einer der obigen Suchen werden die Ergebnisse mit diesen Informationen angezeigt.
+     2. Überprüfe die angezeigten Informationen zu jedem Hotel in der Liste.
 
-#### 1.1.6. Ich möchte ein Hotel auswählen, um die Details zu sehen (z.B. verfügbare Zimmer [siehe 1.2])
-###### Beschreibung zur Ausführung:
-###### -
-###### -
+#### 1.1.6. Ich möchte ein Hotel auswählen, um die Details zu sehen (z.B. verfügbare Zimmer [siehe 1.2]).
+   - **Beschreibung zur Ausführung:**
+     1. Nachdem die Suchergebnisse angezeigt werden, wähle das gewünschte Hotel aus, indem du die entsprechende Nummer eingibst.
+     2. Drücke `Enter`, um die Hoteldetails anzuzeigen.
 
 #### 1.2. Als Gastnutzer möchte ich Details zu verschiedenen Zimmertypen (EZ, DZ, Familienzimmer), die in einem Hotel verfügbar sind, sehen, einschließlich der maximalen Anzahl von Gästen für dieses Zimmer, Beschreibung, Preis und Ausstattung, um eine fundierte Entscheidung zu treffen.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 1.1.6, um ein Hotel auszuwählen.
+     2. Die Details zu den verschiedenen Zimmertypen werden angezeigt.
 
 #### 1.2.1. Ich möchte die folgenden Informationen pro Zimmer sehen: Zimmertyp, max. Anzahl der Gäste, Beschreibung, Ausstattung, Preis pro Nacht und Gesamtpreis.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 1.2, um die Zimmerdetails anzuzeigen.
+     2. Überprüfe die angezeigten Informationen zu jedem Zimmer.
 
-####1.2.2. Ich möchte nur die verfügbaren Zimmer sehen
-###### Beschreibung zur Ausführung:
-###### -
+#### 1.2.2. Ich möchte nur die verfügbaren Zimmer sehen.
+   - **Beschreibung zur Ausführung:**
+     1. Das System zeigt standardmäßig nur verfügbare Zimmer basierend auf den eingegebenen Daten an.
 
-####1.3. Als Gastbenutzer möchte ich ein Zimmer in einem bestimmten Hotel buchen, um meinen Urlaub zu planen.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
-###### -
-###### -
+#### 1.3. Als Gastbenutzer möchte ich ein Zimmer in einem bestimmten Hotel buchen, um meinen Urlaub zu planen.
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 1.2, um die Zimmerdetails anzuzeigen.
+     2. Wähle das gewünschte Zimmer aus, indem du die entsprechende Nummer eingibst.
+     3. Drücke `Enter`, um zur Buchungsseite zu gelangen.
+     4. Folge den Anweisungen zur Eingabe der Buchungsdetails und zur Bestätigung der Buchung.
 
 #### 1.4. Als Gastnutzer möchte ich möglichst wenig Informationen über mich preisgeben, damit meine Daten privat bleiben.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
+   - **Beschreibung zur Ausführung:**
+     1. Das System fragt nur die notwendigsten Informationen für die Buchung ab, wie Name und E-Mail-Adresse.
+     2. Folge den Anweisungen während des Buchungsprozesses.
 
-#### 1.5. Als Gastnutzer möchte ich die Details meiner Reservierung in einer lesbaren Form erhalten (z.B. die Reservierung in einer dauerhaften Datei speichern), damit ich meine Buchung später überprüfen kann.
-###### Beschreibung zur Ausführung:
-###### -
-###### -
+#### 1.5. Als Gastnutzer möchte ich die Details meiner Reservierung in einer lesbaren Form erhalten (z.B. die Reservierung in einer dauerhaften Datei speichern), damit ich meine Buchung später überprüfen kann.
+   - **Beschreibung zur Ausführung:**
+     1. Nach Abschluss der Buchung werden die Reservierungsdetails angezeigt.
+     2. Wähle die Option zum Speichern oder Drucken der Reservierung.
 
-#### 1.6. Als Gastbenutzer möchte ich mich mit meiner E-Mail-Adresse und einer persönlichen Kennung (Passwort) registrieren können, um weitere Funktionalitäten nutzen zu können (z.B. Buchungshistorie, Buchungsänderung etc. [siehe 2.1].
-###### Beschreibung zur Ausführung:
-###### -
-###### -
-###### - 
-
+#### 1.6. Als Gastbenutzer möchte ich mich mit meiner E-Mail-Adresse und einer persönlichen Kennung (Passwort) registrieren können, um weitere Funktionalitäten nutzen zu können (z.B. Buchungshistorie, Buchungsänderung etc. [siehe 2.1]).
+   - **Beschreibung zur Ausführung:**
+     1. Wähle im Hauptmenü die Option zur Registrierung, indem du die entsprechende Nummer eingibst.
+     2. Gib deine E-Mail-Adresse und ein persönliches Passwort ein.
+     3. Drücke `Enter`, um die Registrierung abzuschließen.
 
 ### 2. Als registrierter Nutzer (möchte ich alles tun, was ein Gastnutzer tun kann, und zusätzlich...):
 
 #### 2.1. Als registrierter Benutzer möchte ich mich in mein Konto einloggen, um auf meine Buchungshistorie zuzugreifen ("lesen"), damit ich meine kommenden Reservierungen verwalten kann.
-###### Beschreibung zur Ausführung:
+   - **Beschreibung zur Ausführung:**
+     1. Starte das Projekt, indem du `main.py` ausführst:
+
+        ```sh
+        python main.py
+        ```
+
+     2. Im Hauptmenü wähle die Option "1. Login", indem du die Zahl `1` eingibst und `Enter` drückst.
+     3. Gib deine E-Mail-Adresse und dein Passwort ein.
+     4. Drücke `Enter`, um dich anzumelden.
+     5. Nach der Anmeldung wähle die Option "3. View Booking History", indem du die entsprechende Nummer eingibst und `Enter` drückst.
 
 #### 2.1.1. Die Anwendungsfälle für meine Buchungen sind "neu/erstellen", "ändern/aktualisieren", "stornieren/löschen".
-###### Beschreibung zur Ausführung:
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 2.1, um dich anzumelden und die Buchungshistorie zu sehen.
+     2. Um eine neue Buchung zu erstellen, wähle die Option "4. New Booking" im Hauptmenü nach der Anmeldung.
+     3. Um eine bestehende Buchung zu ändern oder zu stornieren, wähle die entsprechende Buchung aus der Buchungshistorie aus.
+     4. Wähle die Option zum Ändern oder Stornieren der Buchung und folge den Anweisungen.
 
-### 3. Als Admin-Nutzer:
+### 3. Als Admin-Nutzer:
 
 #### 3.1. Als Admin-Nutzer des Buchungssystems möchte ich die Möglichkeit haben, Hotelinformationen zu pflegen, um aktuelle Informationen im System zu haben.
-###### Beschreibung zur Ausführung:
+   - **Beschreibung zur Ausführung:**
+     1. Starte das Projekt, indem du `main.py` ausführst:
 
-#### 3.1.1. Ich möchte neue Hotels zum System hinzufügen
-###### Beschreibung zur Ausführung:
+        ```sh
+        python main.py
+        ```
 
-#### 3.1.2. Ich möchte Hotels aus dem System entfernen
-###### Beschreibung zur Ausführung:
+     2. Im Hauptmenü wähle die Option "1. Login", indem du die Zahl `1` eingibst und `Enter` drückst.
+     3. Melde dich mit dem Admin-Benutzernamen und dem Passwort `Admin1` an.
+     4. Wähle die Option "4. Manage Hotels" im Admin-Menü.
 
-#### 3.1.3. Ich möchte die Informationen bestimmter Hotels aktualisieren, z. B. den Namen, die Sterne usw.
-###### Beschreibung zur Ausführung:
+#### 3.1.1. Ich möchte neue Hotels zum System hinzufügen.
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 3.1, um das Admin-Menü zu öffnen.
+     2. Wähle die Option "1. Add Hotel" im Admin-Menü.
+     3. Gib die erforderlichen Informationen für das neue Hotel ein und drücke `Enter`, um das Hotel hinzuzufügen.
+
+#### 3.1.2. Ich möchte Hotels aus dem System entfernen.
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 3.1, um das Admin-Menü zu öffnen.
+     2. Wähle die Option "2. Remove Hotel" im Admin-Menü.
+     3. Wähle das zu entfernende Hotel aus der Liste aus und bestätige die Entfernung.
+
+#### 3.1.3. Ich möchte die Informationen bestimmter Hotels aktualisieren, z. B. den Namen, die Sterne usw.
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 3.1, um das Admin-Menü zu öffnen.
+     2. Wähle die Option "3. Update Hotel" im Admin-Menü.
+     3. Wähle das zu aktualisierende Hotel aus der Liste aus.
+     4. Gib die neuen Informationen ein und drücke `Enter`, um die Änderungen zu speichern.
 
 #### 3.2. Als Admin-Nutzer des Buchungssystems möchte ich alle Buchungen aller Hotels sehen können, um eine Übersicht zu erhalten.
-###### Beschreibung zur Ausführung:
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 3.1, um das Admin-Menü zu öffnen.
+     2. Wähle die Option "5. View All Bookings" im Admin-Menü.
+     3. Die Übersicht aller Buchungen wird angezeigt.
 
-#### 3.3. Ich möchte alle Buchungen bearbeiten können, um fehlende Informationen zu ergänzen (z.B. Telefonnummer) [Optional].
-###### Beschreibung zur Ausführung:
+#### 3.3. Ich möchte alle Buchungen bearbeiten können, um fehlende Informationen zu ergänzen (z.B. Telefonnummer) [Optional].
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 3.2, um alle Buchungen anzuzeigen.
+     2. Wähle die zu bearbeitende Buchung aus der Liste aus.
+     3. Bearbeite die erforderlichen Informationen und drücke `Enter`, um die Änderungen zu speichern.
 
-#### 3.4. Ich möchte in der Lage sein, die Zimmerverfügbarkeit zu verwalten und die Preise in Echtzeit im Backend-System der Anwendung zu aktualisieren[Optional].
-###### Beschreibung zur Ausführung:
+#### 3.4. Ich möchte in der Lage sein, die Zimmerverfügbarkeit zu verwalten und die Preise in Echtzeit im Backend-System der Anwendung zu aktualisieren [Optional].
+   - **Beschreibung zur Ausführung:**
+     1. Befolge die Schritte aus 3.1, um das Admin-Menü zu öffnen.
+     2. Wähle die Option "6. Manage Room Availability and Prices" im Admin-Menü.
+     3. Wähle das Hotel und den Zimmertyp aus, dessen Verfügbarkeit oder Preis du ändern möchtest.
+     4. Gib die neuen Verfügbarkeitsdaten oder Preise ein und drücke `Enter`, um die Änderungen zu speichern.
 
 ## Projektstruktur
 
