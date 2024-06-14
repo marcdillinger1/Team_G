@@ -14,6 +14,7 @@ Unser Projektteam besteht aus fünf Mitgliedern, die jeweils spezifische Teile d
 - **Dewa**: Hat an der [`ConsoleBase.py`](console/ConsoleBase.py) gearbeitet und den [`BaseManager.py`](business/BaseManager.py) entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt.
 - **Umut**: Zuständig für den [`UserManager.py`](business/UserManager.py), der Benutzerkonten verwaltet, einschließlich der Registrierung neuer Benutzer und der Pflege bestehender Benutzerdaten.
 - **Mario**: Verantwortlich für den [`SearchManager.py`](business/SearchManager.py), der es ermöglicht, nach verfügbaren Zimmern zu suchen, sowie den [`BookingManager.py`](business/BookingManager.py), der die Buchungslogik und -verwaltung übernimmt.
+Aber alles in allem haben wir uns überall gegenseitig geholfen, wenn gewisse Dinge nicht so funktionierten wie wir es wollten. 
 
 
 ### Technologische Implementierung
