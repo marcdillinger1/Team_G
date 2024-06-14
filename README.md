@@ -4,7 +4,7 @@ Marc Dillinger, Umut Can Özcelik, Dewa Dörflinger und Mario Lenzin
 
 ## Projektüberblick
 
-Bei unserem Projekt im Modul "Anwendungsentwicklung mit Python" geht es um ein konsolenbasierten Hotelreservierungssystems. Das Ziel ist es, ein einfaches System zu schaffen, mit dem Nutzer Hotels buchen und Hotelinhaber ihre Unterkünfte verwalten können. 
+Bei unserem Projekt im Modul "Anwendungsentwicklung mit Python" geht es um ein konsolenbasiertes Hotelreservierungssystems. Das Ziel ist es, ein einfaches System zu schaffen, mit dem Nutzer Hotels buchen und Hotelinhaber ihre Unterkünfte verwalten können. 
 
 ## Teamzusammensetzung und Rollen
 
