@@ -57,7 +57,7 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 #### 1.1.1. Ich möchte alle Hotels in einer Stadt durchsuchen, damit ich das Hotel nach meinem bevorzugten Standort (Stadt) auswählen kann.
    - **Beschreibung zur Ausführung:**
      1. Befolge die Schritte aus 1.1, um das Suchmenü zu öffnen.
-     2. Gib den Namen der Stadt ein, nach der du suchen möchtest (Z.b. Basel, Zurich oder Bern)
+     2. Gib den Namen der Stadt ein, nach der du suchen möchtest (z.B. Basel, Zurich oder Bern)
      3. Drücke `Enter`, um die Suche zu starten.
 
 #### 1.1.2. Ich möchte alle Hotels in einer Stadt nach der Anzahl der Sterne durchsuchen.
@@ -138,7 +138,7 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
         ```
 
      2. Im Hauptmenü wähle die Option "1. Login", indem du die Zahl `1` eingibst und `Enter` drückst.
-     3. Gib deine E-Mail-Adresse und dein Passwort ein.
+     3. Gib deine E-Mail-Adresse und dein Passwort ein (z.B. user1
      4. Drücke `Enter`, um dich anzumelden.
      5. Nach der Anmeldung wähle die Option "3. View Booking History", indem du die entsprechende Nummer eingibst und `Enter` drückst.
 
