@@ -10,11 +10,10 @@ Unser Projekt im Modul "Anwendungsentwicklung mit Python", zielt darauf ab, ein 
 
 Unser Projektteam besteht aus fünf Mitgliedern, die jeweils spezifische Teile des Systems bearbeitet haben:
 
-- **Marc**: Verantwortlich für den [SearchManager.py](business/SearchManager.py)
-, der es ermöglicht, nach verfügbaren Zimmern zu suchen. Marc hat auch den `BookingManager` entwickelt, der die Buchungslogik und -verwaltung übernimmt.
-- **Dewa**: Zuständig für den `AdminManager`, der administrative Aufgaben wie die Verwaltung von Hotelzimmern und Raten ermöglicht. Zusammen mit Mario hat Dewa auch an der `ConsoleBase` und weiteren gemeinsamen Dateien gearbeitet, die für die grundlegende Struktur des Systems entscheidend sind.
-- **Umut**: Hat den `UserManager` entwickelt, der Benutzerkonten verwaltet, einschließlich der Registrierung neuer Benutzer und der Pflege bestehender Benutzerdaten.
-- **Mario**: Hat den `BaseManager` entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt. Seine Arbeit mit Dewa an der `ConsoleBase` unterstützte die Integration aller einzelnen Manager in ein kohärentes Gesamtsystem.
+- **Marc**: Verantwortlich für den [`SearchManager.py`](business/SearchManager.py), der es ermöglicht, nach verfügbaren Zimmern zu suchen. Marc hat auch den [`BookingManager.py`](business/BookingManager.py) entwickelt, der die Buchungslogik und -verwaltung übernimmt.
+- **Dewa**: Zuständig für den [`AdminManager.py`](business/AdminManager.py), der administrative Aufgaben wie die Verwaltung von Hotelzimmern und Raten ermöglicht. Zusammen mit Mario hat Dewa auch an der [`ConsoleBase.py`](business/ConsoleBase.py) und weiteren gemeinsamen Dateien gearbeitet, die für die grundlegende Struktur des Systems entscheidend sind.
+- **Umut**: Hat den [`UserManager.py`](business/UserManager.py) entwickelt, der Benutzerkonten verwaltet, einschließlich der Registrierung neuer Benutzer und der Pflege bestehender Benutzerdaten.
+- **Mario**: Hat den [`BaseManager.py`](business/BaseManager.py) entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt. Seine Arbeit mit Dewa an der `ConsoleBase` unterstützte die Integration aller einzelnen Manager in ein kohärentes Gesamtsystem.
 
 ## Technologische Details
 
