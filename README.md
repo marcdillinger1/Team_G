@@ -190,16 +190,14 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 #### 3.3. Ich möchte alle Buchungen bearbeiten können, um fehlende Informationen zu ergänzen (z.B. Telefonnummer) [Optional].
    - **Beschreibung zur Ausführung:**
-     1. Befolge die Schritte aus 3.2, um das Admin-Menü zu öffnen.
+     1. Befolge die Schritte aus 3.1, um das Admin-Menü zu öffnen.
      2. Wähle die Option "6. Update Bookings" im Admin-Menü.
-     3. Bearbeite die erforderlichen Informationen und drücke `Enter`, um die Änderungen zu speichern.
+     3. Gib die Booking.id die angepasst werden muss (ansonsten gib die Zahl `5`ein)
+     4. Bearbeite die erforderlichen Informationen und drücke `Enter`, um die Änderungen zu speichern.
 
 #### 3.4. Ich möchte in der Lage sein, die Zimmerverfügbarkeit zu verwalten und die Preise in Echtzeit im Backend-System der Anwendung zu aktualisieren [Optional].
    - **Beschreibung zur Ausführung:**
-     1. Befolge die Schritte aus 3.1, um das Admin-Menü zu öffnen.
-     2. Wähle die Option "6. Manage Room Availability and Prices" im Admin-Menü.
-     3. Wähle das Hotel und den Zimmertyp aus, dessen Verfügbarkeit oder Preis du ändern möchtest.
-     4. Gib die neuen Verfügbarkeitsdaten oder Preise ein und drücke `Enter`, um die Änderungen zu speichern.
+     1. Befolge die Schritte aus 3.3, um die Zimmerverfügbarkeit anzupassen.
 
 ## Projektstruktur
 
