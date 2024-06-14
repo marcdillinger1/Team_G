@@ -7,7 +7,7 @@ from datetime import datetime
 import os
 
 
-class ConsoleApp:
+class ConsoleApp: # Initialize the application and all manager classes.
     def __init__(self):
         self.data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
         self.base_manager = BaseManager()
@@ -27,7 +27,7 @@ class ConsoleApp:
         )
         self.current_user = None
 
-    def run(self):
+    def run(self): # Main application loop displaying different menus based on user authentication.
         while True:
             print("\nHotel Reservations System")
             if self.current_user:
@@ -35,7 +35,7 @@ class ConsoleApp:
             else:
                 self.show_guest_menu()
 
-    def show_guest_menu(self):
+    def show_guest_menu(self):  # Display the menu for guest operations.
         print("1. Register")
         print("2. Login")
         print("3. Search Hotel as Guest")
@@ -56,7 +56,7 @@ class ConsoleApp:
         elif choice == '6':
             exit()
 
-    def register(self):
+    def register(self): # Handle user registration.
         email = input("Enter your email: ")
         password = input("Enter your password: ")
         user = self.user_manager.register(email, password)
@@ -65,7 +65,7 @@ class ConsoleApp:
         else:
             print("Registration failed. User might already exist.")
 
-    def login(self):
+    def login(self):  # Handle user login.
         email = input("Enter your email: ")
         password = input("Enter your password: ")
         user = self.user_manager.login(email, password)
@@ -75,7 +75,7 @@ class ConsoleApp:
         else:
             print("Login failed. Check your credentials.")
 
-    def show_user_menu(self):
+    def show_user_menu(self): # Display the menu for user-specific operations.
         print(f"Logged in as: {self.current_user['email']}")
         print("1. Search Hotels")
         print("2. View Booking History")
@@ -95,9 +95,9 @@ class ConsoleApp:
         elif choice == '5':
             self.cancel_booking()
         elif choice == '6':
-            self.current_user = None
+            self.current_user = None # Log out the user.
 
-    def search_hotels(self):
+    def search_hotels(self): # Search for hotels based on user input.
         city = input("Enter city: ")
         stars = input("Enter number of stars (optional): ")
         guests = input("Enter number of guests (optional): ")
@@ -112,22 +112,22 @@ class ConsoleApp:
         hotels = self.search_manager.search(city, stars, guests, start_date, end_date)
         self.display_hotels(hotels)
 
-    def search_hotels_as_guest(self):
+    def search_hotels_as_guest(self): # Search for hotels based on input criteria as a guest.
         city = input("Enter city: ")
         stars = input("Enter number of stars (optional): ")
         guests = input("Enter number of guests (optional): ")
         start_date = input("Enter start date (YYYY-MM-DD, optional): ")
         end_date = input("Enter end date (YYYY-MM-DD, optional): ")
 
-        if stars:
+        if stars: # Convert star rating to integer if provided.
             stars = int(stars)
-        if guests:
+        if guests: # Convert number of guests to integer if provided.
             guests = int(guests)
 
         hotels = self.search_manager.search(city, stars, guests, start_date, end_date)
-        self.display_hotels(hotels)
+        self.display_hotels(hotels) # Display found hotels based on search criteria.
 
-    def display_hotels(self, hotels):
+    def display_hotels(self, hotels): # Display information for the found hotels and available rooms.
         print("Hotels found:")
         for hotel in hotels:
             print(
@@ -137,7 +137,7 @@ class ConsoleApp:
                 print(
                     f"  Room ID: {room['room_id']}, Type: {room['room_type']}, Max Guests: {room['max_guests']}, Price: {room['price_per_night']}, Description: {room['description']}, Amenities: {amenities}")
 
-    def make_booking(self):
+    def make_booking(self): # Handle making a booking by a registered user.
         hotel_id = input("Enter hotel ID: ")
         room_id = input("Enter room ID: ")
         start_date = input("Enter start date (YYYY-MM-DD): ")
@@ -153,7 +153,7 @@ class ConsoleApp:
             else:
                 print("Booking failed.")
 
-    def make_booking_as_guest(self):
+    def make_booking_as_guest(self):  # Handle making a booking as a guest.
         hotel_id = input("Enter hotel ID: ")
         room_id = input("Enter room ID: ")
         start_date = input("Enter start date (YYYY-MM-DD): ")
@@ -168,14 +168,14 @@ class ConsoleApp:
             else:
                 print("Booking failed.")
 
-    def view_booking_history(self):
+    def view_booking_history(self): # View the booking history of the current logged-in user.
         print("View booking history")
         bookings = self.booking_manager.get_bookings_by_user(self.current_user['user_id'])
         for booking in bookings:
             print(
                 f"Booking ID: {booking['booking_id']}, Hotel: {booking['hotel_id']}, Room: {booking['room_id']}, Dates: {booking['start_date']} to {booking['end_date']}")
 
-    def update_booking(self):
+    def update_booking(self): # Handle updating a specific booking.
         print("Update a booking")
         booking_id = int(input("Enter booking ID: "))
         start_date = input("Enter new start date (YYYY-MM-DD): ")
@@ -186,7 +186,7 @@ class ConsoleApp:
         else:
             print("Update failed.")
 
-    def cancel_booking(self):
+    def cancel_booking(self): # Handle canceling a specific booking.
         print("Cancel a booking")
         booking_id = int(input("Enter booking ID: "))
         success = self.booking_manager.cancel_booking(booking_id)
@@ -195,7 +195,7 @@ class ConsoleApp:
         else:
             print("Cancellation failed.")
 
-    def admin_actions(self):
+    def admin_actions(self): # Handle administrative actions after successful password verification.
         password = input("Enter admin password: ")
         if password == 'Admin1':
             print("1. Add Hotel")
@@ -216,6 +216,6 @@ class ConsoleApp:
             elif choice == '5':
                 self.admin_manager.update_booking()
             elif choice == '6':
-                return
+                return  # Exit admin menu.
         else:
             print("Invalid admin password.")
