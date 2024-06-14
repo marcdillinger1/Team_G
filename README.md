@@ -138,7 +138,7 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
         ```
 
      2. Im Hauptmenü wähle die Option "1. Login", indem du die Zahl `1` eingibst und `Enter` drückst.
-     3. Gib deine E-Mail-Adresse und dein Passwort ein (z.B. user1
+     3. Gib deine E-Mail-Adresse und dein Passwort ein (z.B. user1@example.com & password1)
      4. Drücke `Enter`, um dich anzumelden.
      5. Nach der Anmeldung wähle die Option "3. View Booking History", indem du die entsprechende Nummer eingibst und `Enter` drückst.
 
@@ -159,7 +159,7 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
         python main.py
         ```
 
-     2. Im Hauptmenü wähle die Option "1. Login", indem du die Zahl `1` eingibst und `Enter` drückst.
+     2. Im Hauptmenü wähle die Option "5. Admin Actions", indem du die Zahl `5` eingibst und `Enter` drückst.
      3. Melde dich mit dem Admin-Benutzernamen und dem Passwort `Admin1` an.
      4. Wähle die Option "4. Manage Hotels" im Admin-Menü.
 
