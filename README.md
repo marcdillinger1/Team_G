@@ -87,17 +87,15 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 #### 1.1.6. Ich möchte ein Hotel auswählen, um die Details zu sehen (z.B. verfügbare Zimmer [siehe 1.2]).
    - **Beschreibung zur Ausführung:**
-     1. Nachdem die Suchergebnisse angezeigt werden, wähle das gewünschte Hotel aus, indem du die entsprechende Nummer eingibst.
-     2. Drücke `Enter`, um die Hoteldetails anzuzeigen.
+     1. Befolge die Schritte aus 1.1.5 um die Hoteldetails zu sehen.
 
 #### 1.2. Als Gastnutzer möchte ich Details zu verschiedenen Zimmertypen (EZ, DZ, Familienzimmer), die in einem Hotel verfügbar sind, sehen, einschließlich der maximalen Anzahl von Gästen für dieses Zimmer, Beschreibung, Preis und Ausstattung, um eine fundierte Entscheidung zu treffen.
    - **Beschreibung zur Ausführung:**
-     1. Befolge die Schritte aus 1.1.6, um ein Hotel auszuwählen.
-     2. Die Details zu den verschiedenen Zimmertypen werden angezeigt.
+     1. Befolge die Schritte aus 1.1.5 um die Zimmerdetails zu sehen.
 
 #### 1.2.1. Ich möchte die folgenden Informationen pro Zimmer sehen: Zimmertyp, max. Anzahl der Gäste, Beschreibung, Ausstattung, Preis pro Nacht und Gesamtpreis.
    - **Beschreibung zur Ausführung:**
-     1. Befolge die Schritte aus 1.2, um die Zimmerdetails anzuzeigen.
+     1. Befolge die Schritte aus 1.1.5, um die Zimmerdetails anzuzeigen.
      2. Überprüfe die angezeigten Informationen zu jedem Zimmer.
 
 #### 1.2.2. Ich möchte nur die verfügbaren Zimmer sehen.
@@ -106,10 +104,13 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 #### 1.3. Als Gastbenutzer möchte ich ein Zimmer in einem bestimmten Hotel buchen, um meinen Urlaub zu planen.
    - **Beschreibung zur Ausführung:**
-     1. Befolge die Schritte aus 1.2, um die Zimmerdetails anzuzeigen.
-     2. Wähle das gewünschte Zimmer aus, indem du die entsprechende Nummer eingibst.
-     3. Drücke `Enter`, um zur Buchungsseite zu gelangen.
-     4. Folge den Anweisungen zur Eingabe der Buchungsdetails und zur Bestätigung der Buchung.
+     1. Befolge die Schritte aus 1.1.5, um die Hoteldetails und Zimmerdetails anzuzeigen.
+     2. Merke dabei die Hotel.id und die Room.id
+     3. Im Hauptmenü wähle die Option "4. Make a Booking as a Guest", indem du die Zahl `4` eingibst und `Enter` drückst.
+     4. Gib die Hotel.id des gewünschten Hotels ein.
+     5. Gib die Room.id des gewünschten Zimmer ein.
+     6. Das System zeigt dann an wie viel der Totale Preis wäre.
+     7. Gib `yes` ein, um die Buchung zu bestätigen.
 
 #### 1.4. Als Gastnutzer möchte ich möglichst wenig Informationen über mich preisgeben, damit meine Daten privat bleiben.
    - **Beschreibung zur Ausführung:**
@@ -118,12 +119,11 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 #### 1.5. Als Gastnutzer möchte ich die Details meiner Reservierung in einer lesbaren Form erhalten (z.B. die Reservierung in einer dauerhaften Datei speichern), damit ich meine Buchung später überprüfen kann.
    - **Beschreibung zur Ausführung:**
-     1. Nach Abschluss der Buchung werden die Reservierungsdetails angezeigt.
-     2. Wähle die Option zum Speichern oder Drucken der Reservierung.
+     1. Nach Abschluss der Buchung als Gastnutzer wird automatisch eine Buchungsbestätigung als .json generiert.
 
 #### 1.6. Als Gastbenutzer möchte ich mich mit meiner E-Mail-Adresse und einer persönlichen Kennung (Passwort) registrieren können, um weitere Funktionalitäten nutzen zu können (z.B. Buchungshistorie, Buchungsänderung etc. [siehe 2.1]).
    - **Beschreibung zur Ausführung:**
-     1. Wähle im Hauptmenü die Option zur Registrierung, indem du die entsprechende Nummer eingibst.
+     1. Wähle im Hauptmenü die Option "1. Register", indem du die Zahl `1` eingibst.
      2. Gib deine E-Mail-Adresse und ein persönliches Passwort ein.
      3. Drücke `Enter`, um die Registrierung abzuschließen.
 
@@ -137,7 +137,7 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
         python main.py
         ```
 
-     2. Im Hauptmenü wähle die Option "1. Login", indem du die Zahl `1` eingibst und `Enter` drückst.
+     2. Im Hauptmenü wähle die Option "2. Login", indem du die Zahl `2` eingibst und `Enter` drückst.
      3. Gib deine E-Mail-Adresse und dein Passwort ein (z.B. user1@example.com & password1)
      4. Drücke `Enter`, um dich anzumelden.
      5. Nach der Anmeldung wähle die Option "3. View Booking History", indem du die entsprechende Nummer eingibst und `Enter` drückst.
@@ -145,8 +145,8 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 #### 2.1.1. Die Anwendungsfälle für meine Buchungen sind "neu/erstellen", "ändern/aktualisieren", "stornieren/löschen".
    - **Beschreibung zur Ausführung:**
      1. Befolge die Schritte aus 2.1, um dich anzumelden und die Buchungshistorie zu sehen.
-     2. Um eine neue Buchung zu erstellen, wähle die Option "4. New Booking" im Hauptmenü nach der Anmeldung.
-     3. Um eine bestehende Buchung zu ändern oder zu stornieren, wähle die entsprechende Buchung aus der Buchungshistorie aus.
+     2. Um eine neue Buchung zu erstellen, wähle die Option "3. Make a Booking" im Hauptmenü nach der Anmeldung.
+     3. Um eine bestehende Buchung zu ändern oder zu stornieren, wähle die entsprechende Optionen aus entweder die "4. Update a Booking." oder die "5. Cancel a Booking.
      4. Wähle die Option zum Ändern oder Stornieren der Buchung und folge den Anweisungen.
 
 ### 3. Als Admin-Nutzer:
@@ -190,8 +190,8 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 
 #### 3.3. Ich möchte alle Buchungen bearbeiten können, um fehlende Informationen zu ergänzen (z.B. Telefonnummer) [Optional].
    - **Beschreibung zur Ausführung:**
-     1. Befolge die Schritte aus 3.2, um alle Buchungen anzuzeigen.
-     2. Wähle die zu bearbeitende Buchung aus der Liste aus.
+     1. Befolge die Schritte aus 3.2, um das Admin-Menü zu öffnen.
+     2. Wähle die Option "6. Update Bookings" im Admin-Menü.
      3. Bearbeite die erforderlichen Informationen und drücke `Enter`, um die Änderungen zu speichern.
 
 #### 3.4. Ich möchte in der Lage sein, die Zimmerverfügbarkeit zu verwalten und die Preise in Echtzeit im Backend-System der Anwendung zu aktualisieren [Optional].
