@@ -1,20 +1,20 @@
 import json
 
 class AdminManager:
-    def __init__(self, hotels_file, bookings_file):
+    def __init__(self, hotels_file, bookings_file):  # Constructor initializes the AdminManager with paths to the hotel and bookings files.
         self.hotels_file = hotels_file
         self.bookings_file = bookings_file
-        self.hotels = self.load_hotels()
+        self.hotels = self.load_hotels()  # Load hotels from file upon initialization.
 
-    def load_hotels(self):
+    def load_hotels(self):    # Load hotels data from a JSON file.
         with open(self.hotels_file, 'r') as file:
             return json.load(file)
 
-    def save_hotels(self):
+    def save_hotels(self):   # Save the current state of hotels data back to the JSON file.
         with open(self.hotels_file, 'w') as file:
             json.dump(self.hotels, file, indent=4)
 
-    def add_hotel(self):
+    def add_hotel(self):    # Add a new hotel by collecting hotel information interactively.
         hotel_id = len(self.hotels) + 1
         name = input("Enter hotel name: ")
         address = input("Enter hotel address: ")
@@ -53,7 +53,7 @@ class AdminManager:
         self.save_hotels()
         print("Hotel added successfully.")
 
-    def update_hotel(self):
+    def update_hotel(self):  # Update hotel information by inputting the hotel ID and new values interactively.
         hotel_id = int(input("Enter hotel ID to update: "))
         hotel = next((h for h in self.hotels if h['hotel_id'] == hotel_id), None)
         if not hotel:
@@ -70,7 +70,7 @@ class AdminManager:
         self.save_hotels()
         print("Hotel updated successfully.")
 
-    def delete_hotel(self):
+    def delete_hotel(self): # Delete a hotel by its ID.
         hotel_id = int(input("Enter hotel ID to delete: "))
         hotel = next((h for h in self.hotels if h['hotel_id'] == hotel_id), None)
         if not hotel:
@@ -80,13 +80,13 @@ class AdminManager:
         self.save_hotels()
         print("Hotel deleted successfully.")
 
-    def view_all_bookings(self):
+    def view_all_bookings(self): # Display all bookings from the bookings JSON file.
         with open(self.bookings_file, 'r') as file:
             bookings = json.load(file)
         for booking in bookings:
             print(f"Booking ID: {booking['booking_id']}, Hotel: {booking['hotel_id']}, Room: {booking['room_id']}, Dates: {booking['start_date']} to {booking['end_date']}, Total Price: {booking['total_price']}")
 
-    def update_booking(self):
+    def update_booking(self):  # Update a booking by changing its start and end dates.
         with open(self.bookings_file, 'r') as file:
             bookings = json.load(file)
         booking_id = int(input("Enter booking ID to update: "))
