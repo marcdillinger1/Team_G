@@ -10,8 +10,8 @@ Bei unserem Projekt im Modul "Anwendungsentwicklung mit Python" geht es um ein k
 
 Unser Projektteam besteht aus fünf Mitgliedern, die jeweils spezifische Teile des Systems bearbeitet haben:
 
-- **Marc**: Verantwortlich für die [`ConsoleBase.py`](console/ConsoleBase.py) und den [`AdminManager.py`](business/AdminManager.py), die es ermöglichen, administrative Aufgaben wie die Verwaltung von Hotelzimmern und Raten zu handhaben und die grundlegende Struktur des Systems zu unterstützen.
-- **Dewa**: Hat an der [`ConsoleBase.py`](console/ConsoleBase.py) gearbeitet und den [`BaseManager.py`](business/BaseManager.py) entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt.
+- **Marc**: Verantwortlich für die [`consoleBase.py`](console/ConsoleBase.py) und den [`AdminManager.py`](business/AdminManager.py), die es ermöglichen, administrative Aufgaben wie die Verwaltung von Hotelzimmern und Raten zu handhaben und die grundlegende Struktur des Systems zu unterstützen.
+- **Dewa**: Hat an der [`consoleBase.py`](console/ConsoleBase.py) gearbeitet und den [`BaseManager.py`](business/BaseManager.py) entwickelt, der als Grundlage für alle anderen Manager-Module dient und gemeinsame Funktionen bereitstellt.
 - **Umut**: Zuständig für den [`UserManager.py`](business/UserManager.py), der Benutzerkonten verwaltet, einschließlich der Registrierung neuer Benutzer und der Pflege bestehender Benutzerdaten.
 - **Mario**: Verantwortlich für den [`SearchManager.py`](business/SearchManager.py), der es ermöglicht, nach verfügbaren Zimmern zu suchen, sowie den [`BookingManager.py`](business/BookingManager.py), der die Buchungslogik und -verwaltung übernimmt.
 Aber alles in allem haben wir uns überall gegenseitig geholfen, wenn gewisse Dinge nicht so funktionierten wie wir es wollten. 
