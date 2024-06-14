@@ -268,7 +268,8 @@ Um das System in Aktion zu sehen und die volle Funktionalität zu erleben, folge
 ## Vorgehensweise
 
 Uns stand während des ganzes Projektes Github zur Verfügung. Wir haben Github benutzt, um unsere Codes zu speichern und zu verwalten. Im Team konnte jeder Änderungen vornehmen und diese hochladen. Dies hat uns eine nahtlose Zusammenarbeit ermöglicht.
-Gleichzeitig haben wir PyCharm verwendet. PyCharm haben wir genutzt, um unsere Codes zu schreiben, zu testen und Fehler zu beheben. 
+Gleichzeitig haben wir PyCharm verwendet. PyCharm haben wir genutzt, um unsere Codes zu schreiben, zu testen und Fehler zu beheben.
+Bei der Bearbeitung des Projekts haben wir auch Unterstützung von ChatGPT erhalten. Wir haben ChatGPT verwendet, um Fragen zu klären, Erklärungen zu verschiedenen Programmierkonzepten zu erhalten und Unterstützung bei der Erstellung von den Codes zu bekommen. Somit konnten wir die Anforderungen erfüllen und das Projekt so gut wie möglich abschliessen. Im nächsten Abschnitt kann man genauer sehen, wie wir ChatGPT bei der Projektarbeit verwendet haben.
 
 ## Quellen
 
