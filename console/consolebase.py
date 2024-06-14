@@ -21,7 +21,10 @@ class ConsoleApp:
             os.path.join(self.data_dir, 'users.json'),
             os.path.join(self.data_dir, 'hotels.json')
         )
-        self.admin_manager = AdminManager(os.path.join(self.data_dir, 'hotels.json'))
+        self.admin_manager = AdminManager(
+            os.path.join(self.data_dir, 'hotels.json'),
+            os.path.join(self.data_dir, 'bookings.json')
+        )
         self.current_user = None
 
     def run(self):

@@ -1,8 +1,9 @@
 import json
 
 class AdminManager:
-    def __init__(self, hotels_file):
+    def __init__(self, hotels_file, bookings_file):
         self.hotels_file = hotels_file
+        self.bookings_file = bookings_file
         self.hotels = self.load_hotels()
 
     def load_hotels(self):
@@ -83,7 +84,7 @@ class AdminManager:
         with open(self.bookings_file, 'r') as file:
             bookings = json.load(file)
         for booking in bookings:
-            print(f"Booking ID: {booking['booking_id']}, Hotel: {booking['hotel_id']}, Room: {booking['room_id']}, Dates: {booking['start_date']} to {booking['end_date']}")
+            print(f"Booking ID: {booking['booking_id']}, Hotel: {booking['hotel_id']}, Room: {booking['room_id']}, Dates: {booking['start_date']} to {booking['end_date']}, Total Price: {booking['total_price']}")
 
     def update_booking(self):
         with open(self.bookings_file, 'r') as file:

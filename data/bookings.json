@@ -43,14 +43,5 @@
         "start_date": "2024-07-01",
         "end_date": "2024-07-05",
         "total_price": 680.0
-    },
-    {
-        "booking_id": 6,
-        "user_id": 24,
-        "hotel_id": "1",
-        "room_id": "1",
-        "start_date": "2024-09-02",
-        "end_date": "2024-09-03",
-        "total_price": 120.0
     }
 ]
